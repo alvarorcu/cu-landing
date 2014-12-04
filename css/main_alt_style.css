@@ -1,0 +1,483 @@
+/* 5. Other layout customization */
+
+/* 1 Style2 : Use it as a reference for customization*/
+
+/* First color */
+.style2 .mm a,       
+.style2 .page-top .p-soon>div h2,       
+.style2 .page-top .p-nav>div h2,       
+.style2 .page-top .p-nav>div h3,       
+.style2 .page-cent .p-title h3,       
+.style2 .page-when .clock .digit,       
+.style2 .page .form input,       
+.style2 .page .form button,       
+.style2 .page .form textarea,       
+.style2 .page p,       
+.style2 .page-contact .onecolumn-1 .page-grid .desc,       
+.style2 .page-contact .socialnet a,       
+.style2 .page-contact ul.desc ,       
+.style2 .text-maincolor{       
+    color: #FFF;
+}
+
+.style2 #fp-nav span, .fp-slidesNav span{
+    border-color: #fff;
+}
+.style2 #fp-nav li .active span, .fp-slidesNav .active span{       
+    background-color: #fff;
+}
+.style2 .page-contact .footer p a{
+    color: #fff;       
+}.style2 .page-when .content,
+.style2 .page-about .content,
+.style2 .page-register .content{
+    border-color: #fff;
+}
+
+/* second color */
+.style2 .page-top .p-soon>div h3,       
+.style2 .page-when .clock .text,       
+.style2 .page-contact .c-right:before,       
+.style2 .text-maincolor{       
+    color: #e5e5e5;
+}
+.style2 .p-footer .arrow-d{
+    background: #e5e5e5;
+}
+.style2 .p-footer .arrow-d:after,
+.style2 .p-footer .arrow-d:before{
+    border-color:  #e5e5e5;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.style2 .page-cent .p-title{
+    border-bottom-color: #e5e5e5;
+}
+.style2 .p-footer .arrow-d:after{   
+    border-right-color: transparent;  
+}
+.style2 .p-footer .arrow-d:before{  
+    border-bottom-color: transparent;
+}
+
+/* Other color Misc */
+.style2 .page-cover .cover-bg-mask{
+    background: rgba(0, 0, 0, 0.4);
+}
+.style2 .page-contact .socialnet a:hover{
+    background: #626262; 
+    color: #fff;       
+}
+.style2 .page-cover .cover-bg{
+    background: url("../img/pict/bg-uni.png");
+    background-color: #222;
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* Override an existing style */
+.style2.alt-bg  .page-cover .cover-bg-mask{
+    background: rgba(51, 29, 47, 0.4);
+}
+.style2.alt-bg .page-cover .cover-bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/*End of Style2 */
+
+
+/* 2 Style3 : Use it as a reference for customization*/
+
+/* First color */
+.style3 .mm a,       
+.style3 .page-top .p-soon>div h2,       
+.style3 .page-top .p-nav>div h2,       
+.style3 .page-top .p-nav>div h3,       
+.style3 .page-cent .p-title h3,       
+.style3 .page-when .clock .digit,       
+.style3 .page .form input,       
+.style3 .page .form button,       
+.style3 .page .form textarea,       
+.style3 .page p,       
+.style3 .page-contact .onecolumn-1 .page-grid .desc,       
+.style3 .page-contact .socialnet a,       
+.style3 .page-contact ul.desc ,       
+.style3 .text-maincolor{       
+    color: #edb04f;
+}
+
+.style3 #fp-nav span, .fp-slidesNav span{
+    border-color: #fff;
+}
+.style3 #fp-nav li .active span, .fp-slidesNav .active span{       
+    background-color: #fff;
+}
+.style3 .page-contact .footer p a{
+    color: #edb04f;       
+}.style3 .page-when .content,
+.style3 .page-about .content,
+.style3 .page-register .content{
+    border-color: #edb04f;
+}
+
+/* second color */
+.style3 .page-top .p-soon>div h3,       
+.style3 .page-when .clock .text,       
+.style3 .page-contact .c-right:before,       
+.style3 .text-maincolor{       
+    color: #fff;
+}
+.style3 .page-top .p-nav>div a:hover h2{
+    border-color: #fff;
+}
+.style3 .page-cent .p-title{
+    border-bottom-color: #fff;
+}
+/* arrow up/down */
+.style3 .p-footer .arrow-d{
+    background: #fff;
+}
+.style3 .p-footer .arrow-d:after,
+.style3 .p-footer .arrow-d:before{
+    border-color:  #fff;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.style3 .p-footer .arrow-d:after{   
+    border-right-color: transparent;  
+}
+.style3 .p-footer .arrow-d:before{  
+    border-bottom-color: transparent;
+}
+
+/* Other color Misc */
+.style3 .page-cover .cover-bg-mask{
+    background: rgba(0, 0, 0, 0.4);
+}
+.style3 .page-contact .socialnet a:hover{
+    background: #edb04f; 
+    color: #fff;       
+}
+.style3 .page-cover .cover-bg{
+    background: url(../img/pict/portfolio6.jpg);
+/*    background: url(../img/pict/portfolio1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/*End of style3 */
+
+/* 3 Style 4 */
+.style4 .mm a,       
+.style4 .page-top .p-soon>div h2,       
+.style4 .page-top .p-nav>div h2,       
+.style4 .page-top .p-nav>div h3,       
+.style4 .page-cent .p-title h3,       
+.style4 .page-when .clock .digit,       
+.style4 .page .form input,       
+.style4 .page .form textarea,       
+.style4 .page .form button,       
+.style4 .page p,       
+.style4 .page-contact .onecolumn-1 .page-grid .desc,       
+.style4 .page-contact .socialnet a,       
+.style4 .page-contact ul.desc ,       
+.style4 .text-maincolor{       
+    color: #5d3e4a;
+}
+
+.style4 #fp-nav span, .fp-slidesNav span{
+    border-color: #5d3e4a;
+}
+.style4 #fp-nav li .active span, .fp-slidesNav .active span{       
+    background-color: #5d3e4a;
+}
+.style4 .page-contact .footer p a{
+    color: #5d3e4a;       
+}.style4 .page-when .content,
+.style4 .page-about .content,
+.style4 .page-contact .c-right:before,
+.style4 .page-register .content{
+    border-color: #5d3e4a;
+}
+
+/* second color */
+.style4 .page-top .p-soon>div h3,       
+.style4 .page-when .clock .text,       
+.style4 .text-maincolor{       
+    color: #fff;
+}
+.style4 .page-top .p-nav>div a:hover h2{
+    border-color: #fff;
+}
+.style4 .page-cent .p-title{
+    border-bottom-color: #fff;
+}
+/* arrow up/down */
+.style4 .p-footer .arrow-d{
+    background: #fff;
+}
+.style4 .p-footer .arrow-d:after,
+.style4 .p-footer .arrow-d:before{
+    border-color:  #fff;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.style4 .p-footer .arrow-d:after{   
+    border-right-color: transparent;  
+}
+.style4 .p-footer .arrow-d:before{  
+    border-bottom-color: transparent;
+}
+
+/* Other color Misc */
+.style4 .page-cover .cover-bg-mask{
+    background: rgba(255, 255, 255, 0.24);
+}
+.style4 .page-cover .cover-bg{
+    background: url('../img/pict/cover_bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/*End of style4 */
+
+/* 4 style5 : Use it as a reference for customization*/
+
+/* First color */
+.style5 .mm a,       
+.style5 .page-top .p-soon>div h2,       
+.style5 .page-top .p-nav>div h2,       
+.style5 .page-top .p-nav>div h3,       
+.style5 .page-cent .p-title h3,       
+.style5 .page-when .clock .digit,       
+.style5 .page .form input,       
+.style5 .page .form button,       
+.style5 .page .form textarea,       
+.style5 .page p,       
+.style5 .page-contact .onecolumn-1 .page-grid .desc,       
+.style5 .page-contact .socialnet a,       
+.style5 .page-contact ul.desc ,       
+.style5 .text-maincolor{       
+    color: #4d4462;
+}
+
+.style5 #fp-nav span, .fp-slidesNav span{
+    border-color: #4d4462;
+}
+.style5 #fp-nav li .active span, .fp-slidesNav .active span{       
+    background-color: #4d4462;
+}
+.style5 .page-contact .footer p a{
+    color: #4d4462;       
+}
+.style5 .page-when .content,
+.style5 .page-about .content,
+.style5 .page-register .content{
+    border-color: #4d4462;
+}
+
+/* second color */
+.style5 .page-top .p-soon>div h3,       
+.style5 .page-when .clock .text,      
+.style5 .page-contact .c-right:before, 
+.style5 .text-maincolor{       
+    color: #4d4462;
+}
+.style5 .page-top .p-nav>div a:hover h2{
+    border-color: #4d4462;
+}
+.style5 .page-cent .p-title{
+    border-bottom-color: #4d4462;
+}
+/* arrow up/down */
+.style5 .p-footer .arrow-d{
+    background: #4d4462;
+}
+.style5 .p-footer .arrow-d:after,
+.style5 .p-footer .arrow-d:before{
+    border-color:  #4d4462;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.style5 .p-footer .arrow-d:after{   
+    border-right-color: transparent;  
+}
+.style5 .p-footer .arrow-d:before{  
+    border-bottom-color: transparent;
+}
+
+/* Other color Misc */
+.style5 .page-cover .cover-bg-mask{
+    background: rgba(255, 255, 255, 0.74);
+}
+.style5 .page-contact .socialnet a:hover{
+    background: #4d4462; 
+    color: #fff;       
+}
+.style5 .page-cover .cover-bg{
+    background: url(../img/pict/sea.jpg);
+/*    background: url(../img/pict/portfolio1.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/*End of style5 */
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -140px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.centered {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 150px;
+}
+
+.centered div {
+    position: relative;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.letras {
+    padding-right: 2em;
+    text-align: right;
+    width: 29%;
+}
+
+.texto {
+    padding-left: 2em;
+    text-align: left;
+    width: 32%;
+}
+
+.texto p {
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+    opacity: 0.9;
+}
+
+.texto .light {
+    font-family: 'OpenSans-Light';
+    margin-bottom: 0.1rem;
+    font-weight: 100;
+    font-size: 0.85rem;
+    text-shadow: none;
+    opacity: 0.8;
+}
+
+
+
+.wrapper {
+    background: url('../img/pict/pixel.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index:-1;
+}
+
+.bee {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    z-index: -2;
+}
+
+.bee img {
+    height: 90%;
+    width: auto;
+}
+
+/*#s-when{
+    background: url(../img/pict/clock.png);
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: auto 120%;
+        z-index:-2;
+}*/
+
+
+
+#s-register {
+    background: url(../img/pict/bg-leo.png);
+    background-repeat: repeat;
+    background-position: center;
+}
+
+/*#s-aboutus {
+    background: url(../img/pict/bg.jpg);
+    background-repeat: repeat;
+    background-position: center;
+    z-index: -2;
+}*/
+
+#s-aboutus .wrapper {
+    background: url('../img/pict/pixel.png') repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.curr {
+    width: 60%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+}
+
+#s-curr .curr-left{
+    position:absolute;
+    top: 130px;
+    left: 45px;
+}
+
+#s-curr h3{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: #e5e5e5;
+}
+
+
+#s-curr .curr-right{
+    position:absolute;
+    bottom: 100px;
+    right: 230px;
+}
+
+.light-text p {
+    font-family: 'OpenSans-Light';
+    font-weight: 100;
+    font-size: 0.9rem;
+    text-shadow: none;
+    opacity: 0.8;
+}
+
+#s-aboutus .content {
+    margin-top: 8px;
+}

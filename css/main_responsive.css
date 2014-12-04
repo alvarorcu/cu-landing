@@ -1,0 +1,327 @@
+/*-----------------------------------------------------------------
+[Legal Notice]
+
+Copyright (c) HighHay/Mivfx
+Before using this template, you should agree with themeforest licenses terms.
+http://themeforest.net/licenses
+-------------------------------------------------------------------*/
+
+
+/** CSS-AddOn for Large screen First responsiveness approch */
+
+
+/* Screen wide than 340px */
+@media (min-width : 100px){
+    .hide-small320{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .page-contact .page-block .map-content{
+        display: none;
+    }
+}
+@media (min-width : 321px){
+    .page-contact .page-block .map-content{
+        display: block;
+        min-height: 90px; 
+    }
+    
+}
+/* Screen wide than 640px */
+@media (min-width : 641px){
+    .mm{
+        margin: 3em;
+    }
+    .mm a{
+        font-size: 1rem;
+    }
+    /* Dot navigation */
+
+    #fp-nav.right{
+        right: 3rem;
+        margin-right: -10px;
+        visibility: visible;
+    }
+    .page-top .p-soon{
+        top: auto;
+    }
+    .page-top .p-soon>div{
+        width: 35%;
+    }
+    .page-top .p-soon>div h2,
+    .page-top .p-soon>div h3{
+        padding-top: 0;
+        padding-left: 2em;
+        padding-right:  1.5em;
+        letter-spacing: 0.5em;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+    /* Icon center */
+    .page-top .p-nav>div{
+        text-align: center;
+        margin-top: 0em;
+    }
+    .page-top .p-nav>div h2{
+        font-size: 10.0rem;
+        margin-top: -0.27em;
+        line-height: 1em;
+        border-radius: 0.5em;
+        border: 1px solid transparent;
+    }
+    .page-top .p-nav>div h3{
+        font-size: 1.0em;
+        line-height: 1em;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    /* Page title */
+    .page-cent .p-title h3{
+        font-size: 1.4rem;
+    }
+    
+    /* Clock */
+    .page-when .clock .block{
+        display: inline-block;
+        position: relative;
+    }
+    .page-when .clock .digit{
+        font-size: 3.6rem;
+        letter-spacing: 0.5em;
+        margin-right: -0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+/*        display: inline-block;*/
+        display: list-item;
+        list-style: none;
+    }
+    .page-when .clock .digit:after{
+        content: ':';
+        position: absolute;
+        right: -0.18em;
+    }
+    .page-when .clock .text{
+        font-family: 'OpenSans-Bold';
+        font-size: 1rem;
+        letter-spacing: 0.5em;
+        margin-left: 0.25em;
+        margin-top: 1em;
+        display: inline-block;
+        text-transform: uppercase;
+    }
+    
+    /* about and register */
+    .page p{    
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    .page .form input{ 
+        font-size: 1rem;
+    }
+    .page .form textarea{ 
+        font-size: 1rem;
+    }
+    .page .form button{ 
+        font-size: 1rem;
+    }
+    .page-about .content{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    
+    /* contact */
+    .page-contact{ 
+        margin-top: 0;
+    }
+    .page-contact ul.desc {
+        padding: 1rem 2rem; 
+        font-size: 1rem;
+    }
+    .page-contact .page-block .main-content{
+        background: transparent; 
+        height: 250px;
+        text-align: left;
+    }
+    .page-contact .page-block .map-content{
+        min-height: 250px; 
+    }
+    .show-for-medium-up{
+        display: block;   
+    }
+
+}
+/* Screen wide than 1000px */
+@media (min-width : 1000px){
+   .texto {
+        padding-left: 1.5em;
+    }
+    .letras {
+        padding-right: 1.5em;
+    }
+}
+
+/* Screen wide than 1024px */
+@media (min-width : 1025px){
+    /* page cover */
+   
+}
+
+/* Screen wide than 1200px */
+@media (min-width : 1200px){
+    .texto {
+        padding-left: 2.2em !important;
+    }
+    .letras {
+        padding-right: 2.2em !important;
+    }
+   
+}
+
+/* Screen wide than 1400px */
+@media (min-width : 1400px){
+    /* page cover */
+    /* Icon center */
+    .page-top .p-nav>div{
+        text-align: center;
+        margin-top: 0em;
+    }
+    .page-top .p-nav>div h2{
+        font-size: 12.0rem;
+        margin-top: -0.3em;
+        line-height: 1em;
+        border-radius: 0.5em;
+        border: 1px solid transparent;
+    }
+    .page-top .p-nav>div h3{
+        font-size: 1.2rem;
+        line-height: 1em;
+        margin: 0;
+        text-transform: uppercase;
+    }
+}
+
+@media (min-width : 1600px){
+    
+}
+@media (min-width : 1800px){
+    
+}
+
+/* height responsiveness*/
+@media (min-height : 000px){
+    .p-footer .arrow-d{
+        display: none;
+    }
+    .page-contact .page-block .map-content{
+        display: none;
+    }
+}
+@media (min-height : 300px){
+    .p-footer .arrow-d{
+        height: 8rem;
+        bottom: 1rem;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        display: block;
+    }
+    .p-footer .arrow-d:after,
+    .p-footer .arrow-d:before{
+        position: absolute; content: ' ';
+        width: 4rem;
+        height: 4rem;
+        left: -2rem;
+    }
+    .p-footer .arrow-d:after{    
+        top: 2rem; 
+    }
+    .p-footer .arrow-d:before{  
+        top: 2rem;    
+    }
+    .p-footer:hover .arrow-d.no-change:after, 
+    .p-footer:hover .arrow-d.no-change:before{
+        top: 3.2rem;
+    }
+    
+}
+@media (min-height : 500px){
+    .p-footer .arrow-d{
+        height: 5rem;
+        bottom: 5rem; 
+        -webkit-transform: none;
+        transform: none;
+    }
+    .page-contact .social-links .page-header{
+        margin-top: 0;
+    }
+    .page-contact .social-links .page-header .header-title{
+        display: inline-block;
+    }
+    .page-contact .footer{
+        padding-top: 1rem; 
+    }
+    .page-contact .page-block .map-content{
+        display: block;
+    }
+    .p-footer .arrow-d:after,
+    .p-footer .arrow-d:before{
+        position: absolute; content: ' ';
+        width: 4rem;
+        height: 4rem;
+        left: -2rem;
+    }
+    .p-footer .arrow-d:after{    
+        top: 1rem; 
+    }
+    .p-footer .arrow-d:before{  
+        top: 1rem;    
+    }
+    .p-footer:hover .arrow-d.no-change:after, 
+    .p-footer:hover .arrow-d.no-change:before{
+        top: 2rem;
+    }
+    
+}
+
+@media (min-width: 801px) and (max-width : 1100px){
+    .texto p {
+        font-size: 0.75rem;
+    }
+    .texto {
+        width: 34% !important;
+        padding-left: 1.7em !important;
+    }
+    .letras {
+        padding-right: 1.7em !important;
+        width: 32% !important;
+    }
+}
+
+@media (min-width: 601px) and (max-width : 800px){
+    .texto p {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    .texto {
+        width: 40% !important;
+        padding-left: 1.5em !important;
+    }
+    .letras {
+        padding-right: 1.5em !important;
+        width: 36% !important;
+    }
+}
+
+@media (max-width : 600px){
+    .texto p {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    .texto {
+        width: 40% !important;
+        padding-left: 1.5em !important;
+    }
+    .letras {
+        padding-right: 1.5em !important;
+        width: 36% !important;
+    }
+}

@@ -1,0 +1,1010 @@
+/*-----------------------------------------------------------------
+[Legal Notice]
+
+Copyright (c) HighHay/Mivfx
+Before using this template, you should agree with themeforest licenses terms.
+http://themeforest.net/licenses
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+/** CSS Reference
+    0. Base Style
+        0.button Buttons
+        0.color Color bg-XX text-XX
+
+    
+    1. Menu at top layer / .mm
+    2. Page cover / .page-cover
+        2.1 Page cover background / .page-cover .cover-bg
+    3. Main Page / .page-main
+        3.1 Page at top / .page-top
+        3.2 Page general param / .page-cent
+        3.3 Page When clock countdown / .page-when
+        3.4 Registration form / .page-register 
+        3.5 About us / .page-about
+        3.6 Contact / .page-contact
+    4. Video background / .video-container
+
+**/
+/*---------- 
+[Colors]
+    text color 1  : #626262
+    color 2  : #9d9a9a
+    background : rgba(255, 255, 255, 0.95) / #fff;
+*/
+
+/* 0. Base Style  */
+/* initialization */
+html {
+    color: #626262;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #fff;
+    text-shadow: none;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body, html, h1, h2, h3, h4, h5, h6, a, ul, li{
+    
+}
+body{
+    font-family: 'OpenSans';
+    background: #fff;
+    
+    margin: 0;
+    padding: 0;
+}
+ul, li{
+    list-style: none outside none;
+    margin: 0;
+}
+iframe{
+    border: none;   
+}
+.pos-rel{
+    position: relative;
+}
+.pos-abs{
+    position: absolute;
+}
+.pos-fix{
+    position: fixed;
+}
+.full-width{
+    width: 100%;
+    max-width: 1440px;
+}
+.full-height{
+    height: 100%;   
+}
+.full-size{
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+
+.my-button {
+    text-transform: uppercase; 
+    font-size: 1rem;
+    padding: 1em;
+    /* padding-top: 0.8rem; */
+    padding-bottom: 0.8rem;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.center-vh{
+/*
+    height: 100%;
+    width: 100%; 
+*/
+    /* width needed for Firefox */
+
+    /* old flexbox - Webkit and Firefox. For backwards compatibility */
+    display: -webkit-box; display: -moz-box;
+    /* middle-aged flexbox. Needed for IE 10 */
+    display: -ms-flexbox;
+    /* new flexbox. Chrome (prefix), Opera, upcoming browsers without */
+    display: -webkit-flex;
+    display: flex;
+
+    /* old flexbox: box-* */
+    -webkit-box-align: center; -moz-box-align: center;
+    /* middle flexbox: flex-* */
+    -ms-flex-align: center;
+    /* new flexbox: various property names */
+    -webkit-align-items: center;
+    align-items: center;
+
+
+    -webkit-box-pack: center; -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;    
+}
+.pos-top{
+    top:0;
+}
+.pos-left{
+    left: 0;
+}
+.pos-right{
+    right: 0;
+}
+.pos-bottom{
+    bottom: 0;   
+}
+.relh100{
+    position:relative; height: 100%;   
+}
+/* Make page full width so reset foundation restriction on max-width*/
+.row{
+/*    width: 100%;*/
+    max-width: 100%;
+}
+
+
+ul, li{
+    list-style: none outside none;
+    margin: 0;
+}
+
+.full-width{
+    width: 100%;
+    max-width: 100%;
+    
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fullscreen-width{
+    width: 100%;
+    max-width: 100%;
+}
+.table{
+    display: table;
+    height: inherit;
+    margin: auto;
+}
+.table-cell{
+    display: table-cell;
+/*    height: inherit;*/
+    vertical-align: middle;
+}
+.align-center{
+    text-align: center;   
+}
+.align-left{    
+    text-align: left;
+}
+.align-right{
+    text-align: right;   
+}
+.align-justify{
+    text-align: justify;   
+}
+/*
+.mask{
+    position: relative;
+}
+*/
+
+/** 0.color Color */
+.mask:before
+{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    opacity: 0.8;
+/*    z-index: 10;*/
+}
+.title.bg-red,
+.bg-red,
+.mask-red:before{    
+    background: #e51c23;
+}
+.title.bg-yellow,
+.bg-yellow,
+.mask-yellow:before{    
+    background: #ffeb3b;
+}
+.title.bg-blue,
+.bg-blue,
+.mask-blue:before{    
+    background: #5677fc;
+}
+.title.bg-pink,
+.bg-pink,
+.mask-pink:before{    
+    background: #e91e63;
+}
+.title.bg-green,
+.bg-green,
+.mask-green:before{    
+    background: #259b24;
+}
+.title.bg-white,
+.bg-white,
+.mask-white:before{    
+    background: #fff;
+}
+.title.bg-black,
+.bg-black,
+.mask-black:before{    
+    background: #1f1f1f;
+}
+.title.bg-orange,
+.bg-orange,
+.mask-orange:before{    
+    background: #ff9800;
+/*    background: #ef6c00;*/
+}
+.title.bg-purple,
+.bg-purple,
+.mask-purple:before{    
+    background: #9c27b0;
+}
+.title.bg-lime,
+.bg-lime,
+.mask-lime:before{    
+    background: #cddc39;
+}
+.title.bg-bluegrey,
+.bg-bluegrey,
+.mask-bluegrey:before{    
+    background: #607d8b;
+}
+
+.title.bg-bluegreylight,
+.bg-bluegreylight,
+.mask-bluegreylight:before{    
+    background: #f0f0f0;
+}
+.title.bg-bluegreydark,
+.bg-bluegreydark,
+.mask-bluegreydark:before{    
+    background: #37474f;
+}
+.title.bg-indigo,
+.bg-indigo,
+.mask-indigo:before{    
+    background: #3f51b5;
+}
+.title.bg-black,
+.bg-black,
+.mask-black:before{    
+    background: #000;
+}
+.title.bg-black1,
+.bg-black1,
+.mask-black1:before{    
+    background: #333;
+}
+.title.bg-amber,
+.bg-amber,
+.mask-amber:before{    
+    background: #ffc107;
+}
+
+.text-white{
+    color: #fff;   
+}
+.text-black{
+    color: #333333;   
+}
+.text-bold{
+    font-weight: bold;   
+}
+.text-red{
+    color: #e51c23;   
+}
+.text-blue{
+    color: #455ede;   
+}
+.text-orange{
+    color: #ff9800;   
+}
+.text-yellow{
+    color: #ffd600;   
+}
+.text-amber{
+    color: #ffc107;   
+}
+.text-pink{
+    color: #e91e63;   
+}
+.text-lightblue{
+    color: #03a9f4;   
+}
+
+.small-col-20{
+    width: 20%;
+}
+.box-shadow {
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+     0 2px 2px rgba(0,0,0,0.2),
+     0 0 4px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+     0 2px 2px rgba(0,0,0,0.2),
+     0 0 4px 1px rgba(0,0,0,0.1);
+    -ms-box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+     0 2px 2px rgba(0,0,0,0.2),
+     0 0 4px 1px rgba(0,0,0,0.1);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5),
+     0 2px 2px rgba(0,0,0,0.2),
+     0 0 4px 1px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+/* Viewport visibility animation  */
+.hidden{
+     opacity:0;
+     -webkit-transition: 0.6s;
+     -ms-transition: 0.6s;
+     transition: 0.6s;
+}
+.visible{
+     opacity:1;
+    -ms-transition: 0.6s;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+.invisible{
+    display: none !important;  
+}
+.s-visible-medium-up{
+    opacity:0;
+}
+strong,
+.bold{
+    font-family: 'OpenSans-Bold';
+}
+.column, .columns{
+    padding: 0;   
+}
+.row .row{
+    margin: 0;   
+}
+/* 1. Menu at top layer */
+.menu-all{
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+}
+.mm{
+    margin: 1.5rem;
+    position: fixed;
+    z-index: 100;
+    text-transform: uppercase;
+}
+.mm a{
+    color: #626262;
+    font-size: 0.8rem;
+    font-family: 'OpenSans-Light';
+    padding: 0.2em;
+}
+.mm a i{
+    -ms-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    transform: none;
+    -webkit-transform-origin: 70%;
+    -ms-transform-origin: 70%;
+    transform-origin: 70%;
+}
+.mm.m-left a i{
+    -webkit-transform-origin: 30%;
+    -ms-transform-origin: 30%;
+    transform-origin: 30%;
+}
+.mm a:hover i{
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+    
+.m-top{
+    top:0;
+}
+.m-left{
+    left:0;
+}
+.m-right{
+    right:0;
+}
+.m-bottom{
+    bottom:0;
+}
+    .mm i{
+        vertical-align: middle;
+        display: inline-block;
+        font-size: 1.8em;
+        margin-top: -0.1em;
+
+    }
+    .m-left i{
+        padding-right: 0.5em;   
+    }
+    .m-right i{
+        padding-left: 0.5em;   
+    }
+/* Dot navigation */
+#fp-nav.right{
+    right: 0.5rem;
+    margin-right: -10px;
+    visibility: hidden;
+}
+#fp-nav span, .fp-slidesNav span{
+    border-color: #626262;   
+}
+#fp-nav li .active span, .fp-slidesNav .active span{
+    background: #626262;  
+}
+/* 2. Page cover */
+.page-cover{
+    background: url(../img/pict/clock.jpg);
+/*    background: #3f51b5;*/
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    z-index: 0;
+}
+    /* 2.1. page cover background*/
+    .page-cover .cover-bg{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: -3;
+    }
+    /* 2.1.a page cover  background mask */
+    .page-cover .cover-bg-mask{
+        background: rgba(255, 255, 255, 0.95);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed; 
+        z-index: -1;
+        -webkit-transition: 2s;
+        -ms-transition: 2s;
+        transition: 2s;
+    }
+/* 3. Main Page */
+.page-main{  
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.page{    
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+/* 3.1 Page at top */
+.page-top{
+    position: relative;
+    padding-top: 2rem;
+}
+.page-top .p-soon{
+    position: absolute;
+    top: 10%;
+    display: block;
+    width: 100%;
+}
+    .page-top .p-soon>div{
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+        .page-top .p-soon>div h2,
+        .page-top .p-soon>div h3{
+/*            padding: 0 2em;*/
+            padding-right:  0em;
+            /* padding-rigth = padding-left - letter-spacing */
+            letter-spacing: 0em;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            line-height: 1em;
+            margin: 0;
+        }
+        .page-top .p-soon>div h2{
+            text-align: left;
+            font-family: 'OpenSans-Bold';
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 0.7em;
+            color: #626262;
+        }
+        .page-top .p-soon>div h3{
+            text-align: right;
+            font-family: 'OpenSans-Light';
+            margin-top: 0.7em;
+            color: #9d9a9a;
+        }
+.page-top .p-nav>div{
+    text-align: center;
+     margin-top: -1.5rem;
+}
+    .page-top .p-nav>div h2{
+        color: #626262;
+        font-size: 4.0rem;
+        margin-top: -0.27em;
+        line-height: 1em;
+        display: inline-block;
+        vertical-align: middle;
+        width: 1em;
+        height: 1em;
+        border-radius: 0.5em;
+        border: 1px solid transparent;
+        -ms-transition: 0.3s;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        background: transparent;
+    }
+    .page-top .p-nav>div h3{
+        color: #626262;
+        font-family: 'OpenSans-Bold';
+        font-family: 'OpenSans-Light';
+        font-size: 1.0em;
+        line-height: 1em;
+        margin: 0;
+        text-transform: uppercase;
+    }
+    .page-top .p-nav>div a:hover h2{
+        border-color: currentColor;
+        border-color: #9d9a9a;
+        border-radius: 0.1em;
+/*        background: rgba(255, 255, 255, 0.53);*/
+    }
+/* Arrow down */
+.p-footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding-top: 5rem;
+}
+.p-footer .arrow-d{
+    position: relative;
+    width: 1px;
+    background: #9d9a9a;
+    height: 10rem;
+    left: 50%;
+    bottom: 4rem;
+    margin: 0;    
+}
+.p-footer .arrow-d:after,
+.p-footer .arrow-d:before{
+    position: absolute; content: ' ';
+    width: 5rem;
+    height: 5rem;
+    left: -2.5rem;
+    margin-left: 0.5px;
+    top: 1.25rem;
+/*
+    -webkit-transform: rotateY(45deg);
+    -ie-transform: rotateY(45deg);
+*/
+    border: 1px solid #9d9a9a;
+    border-left-color: transparent;
+    border-top-color: transparent;  
+    -ms-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.p-footer .arrow-d:after{   
+    border-right-color: transparent;  
+    top: 2.5rem;
+    -ms-transform: rotateZ(-45deg); 
+    -webkit-transform: rotateZ(-45deg); 
+    transform: rotateZ(-45deg); 
+}
+.p-footer .arrow-d:before{  
+    border-bottom-color: transparent;
+    top: 2.5rem;    
+    -ms-transform: rotateZ(-135deg);
+    -moz-transform: rotateZ(-135deg);
+    transform: rotateZ(-135deg);
+}
+.p-footer .arrow-d.no-change:after, 
+.p-footer:hover .arrow-d:after{ 
+    top: 1.25rem; 
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+.p-footer .arrow-d.no-change:before,
+.p-footer:hover .arrow-d:before{
+    top: 1.25rem;
+    -ms-transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+.p-footer:hover .arrow-d.no-change:after, 
+.p-footer:hover .arrow-d.no-change:before{
+    top: 4rem;
+}
+/* 3.2 Page general param */
+.page-cent{
+    width: 100%;   
+    position: relative;
+    text-align: center;
+}
+.page-cent .content{
+/*    width: 50%;*/
+    width: auto;
+    margin: 0 auto;
+    display: inline-block; 
+    -ms-transition: 0.6s;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+.page-cent .content:hover{
+/*    box-shadow: 0px 0px 2px rgba(0,0,0,0.4);*/
+}
+.page-cent .p-title{
+    display: block;
+    border-bottom: 1px solid #9d9a9a;
+    margin-bottom: 0.5rem;
+}
+.page-cent .p-title h3{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: #626262;
+}
+.page .p-title i{
+    display: inline-block;
+    margin-left: -2em;
+    margin-right: 0.5em;
+}
+
+/* 3.3 Page When clock countdown */
+.page-when .content{
+    margin-top: -4rem;
+    border: 1px solid #9d9a9a;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2rem;
+    padding-bottom: 1rem;
+}
+.page-when .content .clock{
+}
+.page-when .clock .block{
+    display: inline-block;
+    position: relative;
+}
+.page-when .clock .digit{
+    position: relative; 
+    font-size: 1.4rem;
+    font-family: 'OpenSans-Light';
+    font-family: 'OpenSans-Bold';
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #626262;
+    display: block;
+}
+.page-when .clock .digit:after{
+    content: ':';
+    position: absolute;
+    right: -0.18em;
+    font-family: 'OpenSans-Light';
+}
+.page-when .clock .text{
+    position: relative; 
+    width: 100%;
+    font-family: 'OpenSans-Light';
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    margin-top: 0.5em;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #9d9a9a;
+}
+.page-when .clock .block:last-child .digit:after{
+    display: none;
+}
+
+/* 3.4 registration form */
+.page-register .content{
+    margin-top: -4rem;
+    border: 1px solid #9d9a9a;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2rem;
+    
+}
+.page .form{  
+}
+.page .form input{ 
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    color: #626262;
+    padding: 0.5em 2em;
+    min-width: 200px;
+    font-family: 'OpenSans-Light';
+    font-size: 0.8rem;
+    box-shadow: none;
+    display: inline-block;
+    width: auto;
+}
+.page .form button{ 
+    background: transparent;
+    border: 1px solid currentColor;
+    color: #626262;
+    font-family: 'OpenSans-Bold';
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+}
+/* 3.5 about us */
+.page-about .content{
+    margin-top: -5rem;
+    
+    margin-top: -4rem;
+    border: 1px solid #9d9a9a;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2rem;
+}
+.page-about .article{
+    max-width: 480px;
+    margin: auto;
+}
+.page-about .description{
+    max-width: 700px;
+    margin: auto;
+}
+.page p{    
+    font-family: 'OpenSans';
+    color: #626262;
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+}
+.page p strong{
+    font-family: 'OpenSans';
+    font-weight: bold;
+}
+.page p.upper{
+    text-transform: uppercase;
+}
+.page p.light{
+    font-family: 'OpenSans-Light';
+}
+
+/* 3.6 contact */
+.page-contact{  
+    margin-top: -1rem;
+}
+.page-contact .content{
+    width: 100%;
+    max-width: 960px;
+}
+    .page-contact .onecolumn-1 .page-grid .desc{
+        color: #626262;
+    }
+    .page-contact .onecolumn-1 .page-header .header-title .title-lvl1:after {
+        display: none;
+    }
+    .page-contact .page-block .main-content{
+        background: transparent; 
+        text-align: left;
+    }
+    .page-contact .page-block .map-content{
+        background: rgba(0, 0, 0, 0.01);
+        min-height: 100px; 
+    }
+    .page-contact .page-block:hover .main-content{
+        box-shadow: none;
+    }
+    .page-contact .social-links .page-header{
+        padding-top: 0;
+        margin-top: -2rem;
+    }
+    .page-contact .social-links .page-header .header-title{
+        display: none;
+    }
+    .page-contact .socialnet a{
+        color: #626262;
+        font-size: 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        margin-bottom:  0.25rem;
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1em;
+        -ms-transition: 0.3s;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+        background: transparent; 
+    }
+    .page-contact .socialnet a:hover{
+        border-radius: 0.2rem;
+        background: #626262; 
+        color: #fff;       
+    }
+    .page-contact ul.desc {
+        padding: 0rem 2rem; 
+        font-family: 'OpenSans-Light';
+        color: #626262;
+        font-size: 0.8rem;
+    }
+    .page-contact ul.desc li.big{
+        font-size: 1.2em;
+        padding-bottom: 0.5rem;
+    }
+    .page-contact ul.desc img{
+        height: 1.4em;
+        padding-right: 0.25rem;
+        width: auto;
+        vertical-align: middle;
+        margin-top: -0.2em;
+    }
+    .page-contact .footer{
+        padding-top: 0rem; 
+    }
+    .page-contact .footer p{
+        font-size: 0.8rem;
+        padding: 1rem;
+        padding-top: 0;
+    }
+    .page-contact .footer p a{
+        color: #626262;
+        text-decoration: underline;        
+        font-family: 'OpenSans-Bold';
+    }
+    .page-contact .c-right .main-content{
+        padding: 0;
+        border-radius: 0.2rem;
+    }
+    .page-contact #gmap{
+        width: 100%;
+        height: 100%;
+        border-radius: 0.2rem;
+    }
+.page-contact .c-right{
+    position: relative;
+}
+.page-contact .c-right:before{
+    content: '';
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 1px;
+    left: -0.2rem;
+    padding: 0.5em 2em;
+    color: #9d9a9a;
+    border-left: 1px solid currentColor;
+}
+/* Form */
+.page-contact .form{
+    padding: 0.5em 2em;
+    position: relative;
+}
+.page-contact .form input{ 
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid currentColor;
+    color: #626262;
+    padding: 0.5em 1em;
+    min-width: 200px;
+    font-size: 0.8rem;
+    display: block;
+    width: 100%;
+}
+.page-contact .form textarea{ 
+    background: transparent;
+    border: 1px solid currentColor;
+    color: #626262;
+    padding: 0.5em 1em;
+    min-width: 200px;    
+    font-size: 0.8rem;
+    display: block;
+    width: 100%;
+    box-shadow: none;
+    min-height: 80px;
+}
+.page-contact .form button{ 
+    background: transparent;
+    border: 1px solid currentColor;
+    font-family: 'OpenSans-Bold';
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+.page-contact .form{
+}
+.page-contact .message-ok{
+    margin-bottom: 0;
+    position: absolute;
+    font-size: 0.6rem;
+}
+/* 4. Video background */
+/* 4.1. static video background */
+.video-container{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: -2;
+}
+.video-container video{
+    height: 724px; 
+    width: 1287px; 
+    margin-top: -42px; 
+    margin-left: 0px;   
+}
+.video-container iframe{    
+    width: 100%;
+    height: 100%;
+}
+.show-for-medium-up{
+    display: none;   
+}
+
+
+
