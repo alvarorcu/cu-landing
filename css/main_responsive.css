@@ -297,6 +297,18 @@ http://themeforest.net/licenses
     .start h3{
         font-size: 0.9rem !important;
     }
+    #s-curr .curr-left{
+        top: 90px !important;
+        left: 45px !important;
+    }
+    #s-curr h3{
+        font-size: 1rem !important;
+    }
+    #s-curr .curr-right{
+        right: 150px !important;
+    }
+
+
 }
 
 @media (min-width: 601px) and (max-width : 800px){
@@ -315,6 +327,21 @@ http://themeforest.net/licenses
     .start h3{
         font-size: 0.8rem !important;
     }
+    #s-curr .curr-left{
+        width:200px;
+        top: 90px !important;
+        left: 20px !important;
+    }
+    .curr-left h3{
+        text-align: right!important;
+    }        
+    #s-curr h3{
+        font-size: 0.9rem !important;
+    }
+    #s-curr .curr-right{
+        right: 80px !important;
+    }
+
 }
 
 @media (max-width : 600px){
@@ -332,5 +359,16 @@ http://themeforest.net/licenses
     }
     .start h3{
         font-size: 0.7rem !important;
+    }
+
+    #s-curr .curr-left{
+        top: 100px !important;
+        left: 30px !important;
+    }
+    #s-curr h3{
+        font-size: 0.8rem !important;
+    }
+    #s-curr .curr-right{
+        right: 30px !important;
     }
 }

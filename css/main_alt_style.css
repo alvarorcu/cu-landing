@@ -470,14 +470,13 @@
 
 #s-curr .curr-left{
     position:absolute;
-    top: 130px;
+    top: 140px;
     left: 45px;
 }
-
 #s-curr h3{
     text-transform: uppercase;   
     font-family: 'OpenSans-Light';
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 0.5em;
     padding-left: 0.5em;
     text-align: center;
