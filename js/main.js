@@ -27,15 +27,74 @@ $(window).on('resize',function(){
      var slideHeight = $('.slick-track').innerHeight();
 });
 
+/** Here comes the Fire to the Base **/
+var ref = new Firebase("https://core-upgrade.firebaseio.com");
+ref.onAuth(function(authData) {
+    console.log( "authData" );
+    if (authData) {
+        // user authenticated with Firebase
+
+        // document.querySelector('.avatar img')
+        //     .setAttribute("src", findProfilePic(authData));
+        $(document).ready(function(){
+            document.querySelector('.login').innerHTML = "<div><h3> Gracias! " + findFullName(authData) + "\n Te estaremos esperando! </h3></div>";
+        });
+
+        // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
+        // console.log(authData);
+            
+        // Saving data
+        ref.child('users').child(authData.uid).set(authData);
+    } else {
+        // user is logged out
+    }
+});
+    
+document.querySelector('.facebook').addEventListener('click', function(){
+    console.log("facebook");
+    userLogin("facebook");
+});
+document.querySelector('.twitter').addEventListener('click', function(){
+    userLogin("twitter");
+});
+    
+function userLogin(Provider){
+    ref.authWithOAuthRedirect(Provider, function(err, authData){
+        console.log(authData);
+    });
+}
+function findProfilePic(authData){
+    var provider = authData.provider;
+    if (provider == "facebook"){
+        return "http://graph.facebook.com/" +
+            authData.uid.split(":")[1] +
+            "/picture?width=40&height=40";
+    }
+    else if (provider == "twitter"){
+        return "http://avatars.io/twitter/"+authData.twitter.username +"?size=large";
+    };
+        
+    return "Not found";
+};
+function findFullName(authData){
+    var provider = authData.provider;
+    if (provider == "facebook"){
+        return authData.facebook.displayName;
+    }
+    else if (provider == "twitter"){
+        return authData.twitter.displayName; 
+    }
+    return "Anonymous Frog";
+}
 
 /** Clock **/
 
 var dateReadableText = 'Upcoming date';
-    if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
-        $('.timeout-day').text('');
-        dateReadableText = $('.site-config').attr('data-date-readable');        
-        $('.timeout-day').text(dateReadableText);
-    }
+if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
+    $('.timeout-day').text('');
+    dateReadableText = $('.site-config').attr('data-date-readable');        
+    $('.timeout-day').text(dateReadableText);
+}
 $('.clock-countdown').downCount({
     date: $('.site-config').attr('data-date'),
     offset: +10
@@ -60,15 +119,15 @@ var backgroundVideoUrl = 'none';
 
 if($('.site-config').attr('data-background') && ($('.site-config').attr('data-background') != '')){
     background = $('.site-config').attr('data-background');
-//    if(background.indexOf('http') >= 0){  
-//        //disable video background for smallscreen
-//        if($(window).width() > 640){
-//            $('.cover-bg').css({"opacity":"0"});
-//            $('.cover-bg').css({"visibility":"hidden"});
-//            backgroundVideoUrl = background;
-//            
-//        }
-//    }
+    //    if(background.indexOf('http') >= 0){  
+    //        //disable video background for smallscreen
+    //        if($(window).width() > 640){
+    //            $('.cover-bg').css({"opacity":"0"});
+    //            $('.cover-bg').css({"visibility":"hidden"});
+    //            backgroundVideoUrl = background;
+    //            
+    //        }
+    //    }
     if(background.indexOf('url(') >= 0){        
         $('.cover-bg').css({"background-image":background});
     }
@@ -88,9 +147,9 @@ if($('.site-config').attr('data-background-mask') && ($('.site-config').attr('da
 
 /** Static video background **/
 $(function(){
-        // Helper function to Fill and Center the HTML5 Video
-        $('.video-container video, .video-container object').maximage('maxcover');
-      });
+    // Helper function to Fill and Center the HTML5 Video
+    $('.video-container video, .video-container object').maximage('maxcover');
+});
 /** youtube / vimeo background */
 $(function(){
     if(backgroundVideoUrl != 'none'){
@@ -98,23 +157,23 @@ $(function(){
         //disable video background for smallscreen
         if($(window).width() > 640){
         
-          $.okvideo({ source: backgroundVideoUrl,
-                    adproof: true
+            $.okvideo({ source: backgroundVideoUrl,
+                        adproof: true
                     
-                    });
+                      });
         }
     }
-    });
+});
 
 
 
 /** Init fullpage.js */
 $(document).ready(function() {
     $('#mainpage').fullpage({
-//        verticalCentered: true,
-		anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
-//        menu: '.mm',
-//        resize : false,
+        //        verticalCentered: true,
+		    anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
+        //        menu: '.mm',
+        //        resize : false,
         css3: true,
         navigation: true
     });
@@ -124,11 +183,11 @@ $(document).ready(function() {
 /** Clock **/
 
 var dateReadableText = 'Upcoming date';
-    if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
-        $('.timeout-day').text('');
-        dateReadableText = $('.site-config').attr('data-date-readable');        
-        $('.timeout-day').text(dateReadableText);
-    }
+if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
+    $('.timeout-day').text('');
+    dateReadableText = $('.site-config').attr('data-date-readable');        
+    $('.timeout-day').text(dateReadableText);
+}
 $('.clock-countdown').downCount({
     date: $('.site-config').attr('data-date'),
     offset: +10
