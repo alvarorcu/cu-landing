@@ -494,7 +494,6 @@ strong,
 }
 /* 2. Page cover */
 .page-cover{
-    background: url(../img/pict/clock.jpg);
 /*    background: #3f51b5;*/
     width: 100%;
     position: fixed;
