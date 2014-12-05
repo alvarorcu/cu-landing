@@ -354,7 +354,29 @@
 .letras {
     padding-right: 2em;
     text-align: right;
-    width: 29%;
+    width:29%;
+    margin-top: 1.2em;
+}
+
+.letras img {
+    width: 100%;
+}
+
+.start {
+    position: relative;
+}
+
+.start h3{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    font-size: 1rem;
+    letter-spacing: 0.5em;
+    padding: 0;
+    margin: 0.8em 0 0;
+    text-align: right;
+    display: block;
+    color: #e5e5e5;
+
 }
 
 .texto {
@@ -526,4 +548,3 @@ button.facebook:hover {
 .page-when .content {
     margin: 3rem 0 5.5rem;
 }
-

@@ -294,6 +294,9 @@ http://themeforest.net/licenses
         padding-right: 1.7em !important;
         width: 32% !important;
     }
+    .start h3{
+        font-size: 0.9rem !important;
+    }
 }
 
 @media (min-width: 601px) and (max-width : 800px){
@@ -309,6 +312,9 @@ http://themeforest.net/licenses
         padding-right: 1.5em !important;
         width: 36% !important;
     }
+    .start h3{
+        font-size: 0.8rem !important;
+    }
 }
 
 @media (max-width : 600px){
@@ -323,5 +329,8 @@ http://themeforest.net/licenses
     .letras {
         padding-right: 1.5em !important;
         width: 36% !important;
+    }
+    .start h3{
+        font-size: 0.7rem !important;
     }
 }
