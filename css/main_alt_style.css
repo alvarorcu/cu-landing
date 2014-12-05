@@ -481,3 +481,39 @@
 #s-aboutus .content {
     margin-top: 8px;
 }
+
+
+.login h3{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    margin-top: 0;
+    text-align: center;
+    display: inline-block;
+    color: #e5e5e5;
+}
+
+.login button{ 
+    background: transparent;
+    border: 1px solid currentColor;
+    color: #e5e5e5;
+    font-family: 'OpenSans-Bold';
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    width: 4rem;
+    margin: 1em;
+}
+
+button.facebook:hover {
+     background: #3a5795;
+}
+
+.page-when .content {
+    margin: 3rem 0 5.5rem;
+}
+

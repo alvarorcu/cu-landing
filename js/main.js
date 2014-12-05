@@ -112,7 +112,7 @@ $(function(){
 $(document).ready(function() {
     $('#mainpage').fullpage({
 //        verticalCentered: true,
-		anchors: ['inicio', 'curricula', 'aquien' , 'nosotros', 'cuando', 'registrate', 'contacto'],
+		anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
 //        menu: '.mm',
 //        resize : false,
         css3: true,

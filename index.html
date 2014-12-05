@@ -11,7 +11,7 @@ http://themeforest.net/licenses
         <meta charset='utf-8'>
 
         <!-- Page Title Here -->
-        <title>Rapide - Landing page Coming Soon responsive template</title>
+        <title>CoreUpgrade 2015 - HackSpace Perú</title>
 
         <!-- Disable screen scaling-->
         <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0'>
@@ -67,27 +67,27 @@ http://themeforest.net/licenses
 
         <!-- BEGIN OF site header Menu -->
 <!--        <header class='menu-all '>-->
-            <div class='m-top m-left mm' data-menuanchor="top">
-                <a href='#top'>
-                    <i class="ion ion-ios7-arrow-up"></i>Inicio
+            <div class='m-top m-left mm' data-menuanchor="inicio">
+                <a href='#inicio'>
+                    <i class="ion-ios-arrow-up"></i>Inicio
                 </a>
             </div>
         
-            <div class='m-top m-right mm' data-menuanchor="register">
-                <a href='#register'>
-                    regístrate<i class='ion ion-ios7-compose-outline'></i>
+            <div class='m-top m-right mm' data-menuanchor="login">
+                <a href='#login'>
+                    Inicia Sesión<i class='ion-log-in'></i>
                 </a>
             </div>
 
-            <div class='m-bottom m-left mm' data-menuanchor="aboutus">
-                <a href='#aboutus'>
-                    <i class='ion ion-ios7-information'></i>Sobre Nosotros
+            <div class='m-bottom m-left mm' data-menuanchor="nosotros">
+                <a href='#nosotros'>
+                    <i class='ion-ios-information-outline'></i>Sobre Nosotros
                 </a>
             </div>
 
-            <div class='m-bottom m-right mm' data-menuanchor="contact">
-                <a href='#contact'>
-                    Contáctanos<i class='ion ion-ios7-location'></i>
+            <div class='m-bottom m-right mm' data-menuanchor="contacto">
+                <a href='#contacto'>
+                    Contáctanos<i class='ion-ios-location'></i>
                 </a>
             </div>
 <!--        </header>-->
@@ -185,28 +185,18 @@ http://themeforest.net/licenses
             </div>
             <!-- End of about us page -->
 
-            <!-- Begin of aboutus page -->
-            <div class='section page page-cent page-about' id='s-aboutus'>
-                <div class="wrapper"></div>
-                <section class='content'>
-                    <header class='p-title'>
-                        <h3>Sobre Nosotros
-                        </h3>
-                    </header>
-                    <article class='description light-text'>
-                        <p>En el HackSpace buscamos crear un camino hacia el empoderamiento tecnológico. Como muchos jóvenes, teníamos la errada creencia de que para <strong>aprender a hacer</strong> en carreras como Ingeniería, Ciencias o Diseño debíamos someternos a una currícula y seguir el orden que se nos imponía. Pensábamos que el único camino para desarrollarnos correctamente eran las instituciones.</p>
-                        <p>Pero aprendimos que somos capaces de mucho por nuestra cuenta, y más aún en comunidad. Jugando y retándonos empezamos a hacer realidad nuestras ideas. Comprobamos que realmente podíamos crear valor. Y con esfuerzo y práctica hasta podemos influir y cambiar el mundo donde vivimos.</p>
-                        <p>En el camino, generamos dinámicas de aprendizaje y desarrollo. Tenemos amanecidas semanales en espacios que promueven la formación práctica y el desarrollo rápido de ideas. Creemos que esto no se debe quedar solo entre nosotros. Es por ello que iniciamos la difusión y generación de más espacios de empoderamiento y auto-aprendizaje en comunidad.</p>
-                        <p>Y para que cualquier interesado pueda sacarle todo el provecho a nuestras actividades hemos preparado el <strong>CoreUpgrade 2015</strong>. Este es un entrenamiento de los conocimientos básicos necesarios para empezar a desarrollar con tecnologías web y electrónica. Además, este entrenamiento nos servirá para seleccionar a los más esforzados e interesados para que participen en un entrenamiento de especialización interno en nuestros espacios ubicados en Lima.</p>
-                    </article>
+             <!-- Begin of register page -->
+            <div class='section page page-cent page-when' id='s-register'>
+                <section class="login">
+                    <div>
+                            <h3 class='invite'>Inicia Sesión</h3>
+                    </div>
+
+                    <div>
+                        <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
+                        <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
+                    </div>
                 </section>
-            </div>
-            <!-- End of about us page -->
-            
-            
-            <!-- Begin of when page -->
-            <div class='section page page-cent page-when' id='s-when'>
-                <div class="wrapper"></div>  
                 <section class='content'>
                     <header class='p-title'>
                         <h3><i class='ion ion-ios7-timer-outline'>
@@ -230,37 +220,7 @@ http://themeforest.net/licenses
                             <div class='digit seconds'>00</div>
                             <div class='text'>segs</div>
                         </div>
-                    </div>                   
-                    
-                </section>                
-                <footer class='p-footer p-scrolldown'>
-                    <a href="#register">
-                        <div class='arrow-d'></div>
-                    </a>                        
-                </footer>
-            </div>
-            <!-- End of when page -->
-            
-            <!-- Begin of register page -->
-            <div class='section page page-cent  page-register' id='s-register'>
-                <section class='content'>
-                    <header class='p-title'>
-                        <h3>
-                            <i class='ion ion-ios7-compose-outline'>
-                            </i>Regístrate</h3>
-                    </header>
-                    <div>
-                        <form id='mail-subscription' class='form magic send_email_form' method='get' action='ajaxserver/serverfile.php'>
-                            <p class='invite'>Puedes registrarte con Facebook o Twitter:</p>
-                            <div>
-                                <input class='email_f'  name='email' type='email' required placeholder="your@email.address" data-validation-type='email'></div>
-                            <div>
-                                <button id='submit-email' class='button email_b' name='submit_email'>Ok</button>
-                            </div>
-                            
-                            <p class='email-ok invisible'><strong>Gracias</strong> por suscribirte. Te estaremos enviando información lo antes posible.</p>
-                        </form>
-                    </div>
+                    </div>              
                 </section>
                 <footer class='p-footer p-scrolldown'>
                     <a href="#aboutus">
@@ -269,8 +229,26 @@ http://themeforest.net/licenses
                 </footer>
             </div>
             <!-- End of register page -->
-            
-                
+
+            <!-- Begin of aboutus page -->
+            <div class='section page page-cent page-about' id='s-aboutus'>
+                <div class="wrapper"></div>
+                <section class='content'>
+                    <header class='p-title'>
+                        <h3>Sobre Nosotros
+                        </h3>
+                    </header>
+                    <article class='description light-text'>
+                        <p>En el HackSpace buscamos crear un camino hacia el empoderamiento tecnológico. Como muchos jóvenes, teníamos la errada creencia de que para <strong>aprender a hacer</strong> en carreras como Ingeniería, Ciencias o Diseño debíamos someternos a una currícula y seguir el orden que se nos imponía. Pensábamos que el único camino para desarrollarnos correctamente eran las instituciones.</p>
+                        <p>Pero aprendimos que somos capaces de mucho por nuestra cuenta, y más aún en comunidad. Jugando y retándonos empezamos a hacer realidad nuestras ideas. Comprobamos que realmente podíamos crear valor. Y con esfuerzo y práctica hasta podemos influir y cambiar el mundo donde vivimos.</p>
+                        <p>En el camino, generamos dinámicas de aprendizaje y desarrollo. Tenemos amanecidas semanales en espacios que promueven la formación práctica y el desarrollo rápido de ideas. Creemos que esto no se debe quedar solo entre nosotros. Es por ello que iniciamos la difusión y generación de más espacios de empoderamiento y auto-aprendizaje en comunidad.</p>
+                        <p>Y para que cualquier interesado pueda sacarle todo el provecho a nuestras actividades hemos preparado el <strong>CoreUpgrade 2015</strong>. Este es un entrenamiento de los conocimientos básicos necesarios para empezar a desarrollar con tecnologías web y electrónica. Además, este entrenamiento nos servirá para seleccionar a los más esforzados e interesados para que participen en un entrenamiento de especialización interno en nuestros espacios ubicados en Lima.</p>
+                    </article>
+                </section>
+            </div>
+            <!-- End of about us page -->
+                    
+
             <!-- Begin of Contact page   -->
             <div class='section page page-contact page-cent' id='s-contact'>
                     
@@ -288,13 +266,13 @@ http://themeforest.net/licenses
                                 <div class='main-content'>
                                     <ul class='desc'>
                                         <li class='big'>
-                                            <img class='logo' src="img/pict/logo_small.png" alt='Logo'>
-                                            <span class='bold'>Rapide</span> by <span class='bold'>HighHay</span>
+                                            <img class='logo' src="img/pict/hslogo.png" alt='HackSpace Perú'>
+                                            <span class='bold'>Asociación Hack Space Perú</span>
                                         </li>
-                                        <li>123 Street</li>
-                                        <li>Mountain Beach, Antartica</li>
-                                        <li><span class='bold'>Tel</span> : 01 02 034 56 7</li>
-                                        <li><span class='bold'>Email</span> : contact@email.com</li>
+                                        <li>Almirante Guisse 1198, Jesús María</li>
+                                        <li>Lima, Perú</li>
+                                        <li><span class='bold'>Tel</span> : 975 406 862</li>
+                                        <li><span class='bold'>Correo</span> : contacto@hackspace.pe</li>
                                     </ul>
                                 </div>                        
                             </li>
@@ -307,21 +285,21 @@ http://themeforest.net/licenses
                                           <div class="row">
                                             <div class="large-12 columns">
 
-                                                <input name="name" type="text" placeholder="Name" required/>
+                                                <input name="name" type="text" placeholder="Nombre" required/>
                                             </div>
                                               <div class="large-12 columns">
 
-                                                <input type="email" placeholder="Email Address" name="email" required/>
+                                                <input type="email" placeholder="Correo Electrónico" name="email" required/>
                                             </div>
                                             <div class="large-12 columns">
-                                                <textarea placeholder="Message ..." name="message" required></textarea>
+                                                <textarea placeholder="Mensaje..." name="message" required></textarea>
                                             </div>
                                               <div>
                                     <button id='submit-message' class='button email_b' name='submit_message'>Ok</button>
                                 </div>
 
                                     <div>
-                                    <p class='message-ok invisible'>Your message has been sent, thank you.</p>
+                                    <p class='message-ok invisible'>Tu mensaje ha sido enviado, gracias.</p>
                                     </div>
                                           </div>   
                                         </form>
@@ -338,15 +316,13 @@ http://themeforest.net/licenses
                     <div class='social-links columns'>
                         <article class="page-header columns article">
                             <header class="header-title mc-nav-header">
-                                <p class='align-center upper  light text-maincolor'>Follow us on :</p>
+                                <p class='align-center upper  light text-maincolor'>Síguenos en :</p>
                             </header>
                             <div class='align-center desc socialnet'>
                                 <!-- Social networks : use fontawesome font-->
-                                <a href='#'><i class="ion ion-social-facebook"></i></a>
-                                <a href='#'><i class="ion ion-social-instagram"></i></a>
-                                <a href='#'><i class="ion ion-social-twitter"></i></a>
-                                <a href='#'><i class="ion ion-social-pinterest"></i></a>
-                                <a href='#'><i class="ion ion-social-tumblr"></i></a>
+                                <a href='#'><i class="ion-social-facebook"></i></a>
+                                <a href='#'><i class="ion-social-twitter"></i></a>
+                                <a href='#'><i class="ion-social-rss"></i></a>
                             </div>
                         </article>
                     </div>
@@ -356,8 +332,8 @@ http://themeforest.net/licenses
                     <footer class='footer columns'>
                         <p class='align-center light  desc'>
                             <!-- Replace by your agency -->
-                            Website by <a href='http://highhay.com'>HighHay</a>. 
-                            <br>2015 All Right Reserved.
+                            Desarrollado por <a href='http://www.hackspace.pe'>HackSpace</a>. 
+                            <br>2015 Todos los derechos reservados.
                         </p>
                     </footer>
                     
