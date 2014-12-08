@@ -28,7 +28,7 @@
 			ofTop: 0,
 			ofLeft: 0,
 			on:'document.body',
-			twinkle: 0.2,
+			twinkle: 0.1,
 			minPixel: 1,
 			maxPixel: 2,
 			color: '#fff'
