@@ -36,6 +36,7 @@ http://themeforest.net/licenses
         
         <script src='./js/vendor/modernizr-2.7.1.min.js'></script>
         <script src="https://cdn.firebase.com/js/client/2.0.5/firebase.js"></script>
+        
     </head>
     <body id='menu' class='style2'>
         <!--[if lt IE 8]>
@@ -377,10 +378,19 @@ http://themeforest.net/licenses
 
         <script src='./js/form_script.js'></script>
         <script src='./js/main.js'></script>
-        
+        <script src="./js/firefly.js"></script>
         <script type="text/javascript">
         </script>
-
+        
+<script type="text/javascript">
+$.firefly({
+    color: '#bbbbbb',
+    minPixel: 1,
+    maxPixel: 3,
+    total : 65,
+    on: '.page-cover'
+});
+</script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
