@@ -61,6 +61,9 @@ document.querySelector('.twitter').addEventListener('click', function(){
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){
         console.log(authData);
+    },{
+        rememberMe: true,
+        scope: 'email'
     });
 }
 function findProfilePic(authData){
