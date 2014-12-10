@@ -27,6 +27,7 @@ ref.onAuth(function(authData) {
         document.querySelector('.avatar img')
             .setAttribute("src", findProfilePic(authData));
         
+        
         // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
 
         
@@ -39,6 +40,9 @@ ref.onAuth(function(authData) {
     }
 });
 
+function sendActivationCode(activationCode, authData){
+
+}
 function findProfilePic(authData){
     var provider = authData.provider;
     if (provider == "facebook"){
