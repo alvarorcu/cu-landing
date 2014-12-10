@@ -28,6 +28,71 @@ $(window).on('resize',function(){
 });
 
 /*************************************/
+/******* Add fb sdk functions ********/
+/*************************************/
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1584684295095074',
+      status     : true, 
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.2'
+    });
+  };
+ 
+ 
+ function postfb()
+{
+    FB.login(function(response)
+    {
+        if (response.authResponse)
+        {
+ 
+            // Post message to your wall
+ 
+            FB.ui(
+                {
+                 method: 'stream.publish',
+                 message: 'Hackspace',
+                 attachment: {
+                   name: 'Core Upgrade - Hackspace 2015',
+                   caption: 'Core Upgrade - Hackspace 2015',
+                   description: (
+                     'He ingresado al Core Upgrade - Hackspace 2015, tú también se parte de esta gran experiencia ingresa ahora te esperamos. '
+                 ),
+                href: 'alvarorcu.github.io/cu-landing',
+                picture: 'https://fbcdn-photos-d-a.akamaihd.net/hphotos-ak-xpa1/t39.2081-0/p128x128/10574696_1584699925093511_967030902_n.png'
+                },
+                action_links: [
+                { text: 'Se parte de esta gran experiencia', href: 'alvarorcu.github.io/cu-landing' }
+                ],
+                user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
+                },
+                function(response) {
+                    if (response && response.post_id) {
+                        alert('El post fue publicado.');
+                        } else {
+                        alert('El post no fue publicado.');
+                    }
+                 }
+                );
+                }
+        else
+        {
+            alert('No se ha logeado');
+        }
+    }, { scope : 'publish_stream' });
+}
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+/*************************************/
 /** Here comes the Fire to the Base **/
 /*************************************/
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
@@ -54,6 +119,7 @@ ref.onAuth(function(authData) {
 document.querySelector('.facebook').addEventListener('click', function(){
     console.log("facebook");
     userLogin("facebook");
+    postfb();
 });
 document.querySelector('.twitter').addEventListener('click', function(){
     userLogin("twitter");
