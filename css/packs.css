@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
 	background: url('../img/pict/bg-leo.png');
 }
 .holi
@@ -18,4 +19,11 @@ body {
 {
     margin-bottom:0.1rem;
     padding: 1rem;
+=======
+	  background: url('../img/pict/bg-leo.png');
+}
+
+.hideThis {
+    display: none;
+>>>>>>> a66b0ce09d8b53c895297587ede678b38e88290c
 }
