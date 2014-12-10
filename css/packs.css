@@ -1,6 +1,23 @@
 body {
 	background: url('../img/pict/bg-leo.png');
+    font-family: 'OpenSans';
 }
+
+p {
+font-family: 'OpenSans';
+color: #fff;
+font-size: 0.8rem;
+margin-bottom: 0.75rem;
+}
+
+p.light {
+font-family: 'OpenSans-Light';
+}
+
+.align-center{
+    text-align: center;
+}
+
 .holi
 {
     border-color: #ffffff;
@@ -10,6 +27,19 @@ body {
     border-right-color-ltr-source: physical;
     border-right-color-rtl-source: physical;
 }
+
+h3{
+    text-transform: uppercase;
+    font-family: 'OpenSans-Light';
+    font-size: 1rem;
+    letter-spacing:0.2em;
+    padding:0;
+    margin:0 0 0.8em;
+    text-align: center;
+    display:block;
+    color:#e5e5e5;
+}
+
 .boli
 {
     text-align:center;
@@ -23,17 +53,12 @@ body {
 {
     margin-bottom:0.1rem;
     padding: 1rem;
-<<<<<<< HEAD
-=======
-	  background: url('../img/pict/bg-leo.png');
->>>>>>> after rebase
 }
 
 .hideThis {
     display: none;
 }
 
-<<<<<<< HEAD
 .rojo .button {
     background-color: #e42038;
     border-color: #ba2048;
@@ -41,6 +66,10 @@ body {
 
 .rojo .button:hover, .rojo .button:focus {
     background-color: #ba2048;
+}
+
+.arrow {
+    margin-top: 2.5em;
 }
 
 .amarillo .button {
@@ -51,7 +80,8 @@ body {
 
 .amarillo .button:hover, .amarillo .button:focus {
     background-color: #c4b020;
-=======
+}
+
 #go {
 	display: none;
 }
@@ -71,5 +101,14 @@ body {
 	display: none;
 	border: solid 1px white;
 	padding: 2em;
->>>>>>> after rebase
+}
+
+.desc {
+    margin-top: 2rem;
+}
+
+footer p {
+font-size: 0.8rem;
+padding: 1rem;
+padding-top: 0;
 }
