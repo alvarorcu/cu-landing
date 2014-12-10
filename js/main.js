@@ -27,7 +27,9 @@ $(window).on('resize',function(){
      var slideHeight = $('.slick-track').innerHeight();
 });
 
+/*************************************/
 /** Here comes the Fire to the Base **/
+/*************************************/
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 ref.onAuth(function(authData) {
     console.log( "authData" );
