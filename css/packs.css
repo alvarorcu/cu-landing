@@ -107,6 +107,9 @@ h3{
     margin-top: 2rem;
 }
 
+.nopad {
+    padding:0 !important;
+}
 footer p {
 font-size: 0.8rem;
 padding: 1rem;
