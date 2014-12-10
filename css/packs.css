@@ -1,3 +1,21 @@
 body {
 	background: url('../img/pict/bg-leo.png');
 }
+.holi
+{
+    border-color: #ffffff;
+    border: 1px solid;
+    border-left-color-ltr-source: physical;
+    border-left-color-rtl-source: physical;
+    border-right-color-ltr-source: physical;
+    border-right-color-rtl-source: physical;
+}
+.boli
+{
+    text-align:center;
+}
+.trolis
+{
+    margin-bottom:0.1rem;
+    padding: 1rem;
+}
