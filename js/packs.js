@@ -28,6 +28,7 @@ ref.onAuth(function(authData) {
         document.querySelector('.avatar img')
             .setAttribute("src",
                           "../img/pict/avatar.jpg");
+        
     }
 });
 

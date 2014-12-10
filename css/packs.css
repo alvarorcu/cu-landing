@@ -1,3 +1,7 @@
 body {
-	background: url('../img/pict/bg-leo.png');
+	  background: url('../img/pict/bg-leo.png');
+}
+
+.hideThis {
+    display: none;
 }
