@@ -15,6 +15,14 @@
   float: right;
   height: 100%;
   line-height: 100%;
+  position: relative;
+}
+.avatar-img .settings {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 0.5em;
 }
 .avatar-img img {
   height: 100%;

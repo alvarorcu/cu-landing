@@ -8,6 +8,12 @@ $(window).load(function(){
         $("#go").leanModal();
         $("#go").trigger('click');
     }
+
+    $('.avatar-img img').click(function () {
+        console.log( "img", this );
+        $('.settings').slideToggle();
+        
+    });
 });
 
 /* END OF Page Loader : hide loader when all are loaded */
