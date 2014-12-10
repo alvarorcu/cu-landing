@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
 	background: url('../img/pict/bg-leo.png');
 }
 .holi
@@ -15,15 +14,36 @@ body {
 {
     text-align:center;
 }
+
+.boli .button
+{
+    margin-bottom: 0.4em;
+}
 .trolis
 {
     margin-bottom:0.1rem;
     padding: 1rem;
-=======
-	  background: url('../img/pict/bg-leo.png');
 }
 
 .hideThis {
     display: none;
->>>>>>> a66b0ce09d8b53c895297587ede678b38e88290c
+}
+
+.rojo .button {
+    background-color: #e42038;
+    border-color: #ba2048;
+}
+
+.rojo .button:hover, .rojo .button:focus {
+    background-color: #ba2048;
+}
+
+.amarillo .button {
+    background-color: #f6e722;
+    border-color: #c4b020;
+    color:#000;
+}
+
+.amarillo .button:hover, .amarillo .button:focus {
+    background-color: #c4b020;
 }
