@@ -19,6 +19,7 @@
 }
 .avatar-img .settings {
   display: none;
+  z-index: 2;
   position: absolute;
   right: 0;
   top: 100%;

@@ -2,17 +2,9 @@
 $(window).load(function(){
     $('.page-loader').addClass('hidden');
 
-    var islogin = false;
-
-    if(!islogin){
-        $("#go").leanModal();
-        $("#go").trigger('click');
-    }
-
     $('.avatar-img img').click(function () {
         console.log( "img", this );
         $('.settings').slideToggle();
-        
     });
 });
 
@@ -26,26 +18,45 @@ $(window).load(function(){
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 
 ref.onAuth(function(authData) {
-    console.log( "authData" );
     if (authData) {
         // user authenticated with Firebase
 
         document.querySelector('.avatar img')
             .setAttribute("src", findProfilePic(authData));
         
-        
-        // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
+        $('.settings').click(function(){
+            ref.unauth();
+        });
 
-        
+        $("#lean_overlay").fadeOut(200);
+        $("#login").css({"display":"none"});
+
     } else {
-        
+        $("#go").leanModal();
+        $("#go").trigger('click');
         document.querySelector('.avatar img')
             .setAttribute("src",
                           "../img/pict/avatar.jpg");
         
     }
+          });
+
+$('.facebook').click(function(){
+    userLogin("facebook");
 });
 
+$('.twitter').click(function(){
+    userLogin("twitter");
+});
+
+function userLogin(Provider){
+    ref.authWithOAuthRedirect(Provider, function(err, authData){
+        console.log(authData);
+    },{
+        rememberMe: true,
+        scope: 'email'
+    });
+}
 function sendActivationCode(activationCode, authData){
 
 }
