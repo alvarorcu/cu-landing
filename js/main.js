@@ -36,15 +36,14 @@ ref.onAuth(function(authData) {
 
         // document.querySelector('.avatar img')
         //     .setAttribute("src", findProfilePic(authData));
-        $(document).ready(function(){
-            document.querySelector('.login').innerHTML = "<div><h3> Gracias! " + findFullName(authData) + "\n Te estaremos esperando! </h3></div>";
-        });
+        
+        // Saving data
+        ref.child('users').child(authData.uid).set(authData);
 
+        window.location = "packs";
         // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
         // console.log(authData);
             
-        // Saving data
-        ref.child('users').child(authData.uid).set(authData);
     } else {
         // user is logged out
     }
