@@ -1,6 +1,13 @@
 /* Page Loader : hide loader when all are loaded */
 $(window).load(function(){
     $('.page-loader').addClass('hidden');
+
+    var islogin = false;
+
+    if(!islogin){
+        $("#go").leanModal();
+        $("#go").trigger('click');
+    }
 });
 
 /* END OF Page Loader : hide loader when all are loaded */

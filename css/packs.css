@@ -23,12 +23,17 @@ body {
 {
     margin-bottom:0.1rem;
     padding: 1rem;
+<<<<<<< HEAD
+=======
+	  background: url('../img/pict/bg-leo.png');
+>>>>>>> after rebase
 }
 
 .hideThis {
     display: none;
 }
 
+<<<<<<< HEAD
 .rojo .button {
     background-color: #e42038;
     border-color: #ba2048;
@@ -46,4 +51,25 @@ body {
 
 .amarillo .button:hover, .amarillo .button:focus {
     background-color: #c4b020;
+=======
+#go {
+	display: none;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0px;
+    left: 0px;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+#login {
+	display: none;
+	border: solid 1px white;
+	padding: 2em;
+>>>>>>> after rebase
 }
