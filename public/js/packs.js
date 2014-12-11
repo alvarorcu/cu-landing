@@ -247,3 +247,11 @@ function preloadImages(array) {
 }
 
 preloadImages(["../img/pict/ticket2.png", "../img/pict/maker2.png", "../img/pict/packhs2.png"]);
+
+
+
+$(function() {
+    $("a[rel*=modalMsj]").modalMsj();       
+});
+
+
