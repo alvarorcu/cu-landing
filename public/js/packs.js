@@ -50,7 +50,7 @@ ref.onAuth(function(authData) {
         $("#go").trigger('click');
         document.querySelector('.avatar img')
             .setAttribute("src",
-                          "../img/pict/avatar.jpg");
+                          "../img/pict/avatar.png");
         
     }
 });
@@ -118,6 +118,7 @@ function findFullName(authData){
     return "Anonymous Frog";
 }
 
+
 $(function() {
     $("img.holi")
         .mouseover(function() { 
@@ -129,3 +130,25 @@ $(function() {
             $(this).attr("src", src);
         });
 });
+
+function preloadImages(array) {
+    if (!preloadImages.list) {
+        preloadImages.list = [];
+    }
+    var list = preloadImages.list;
+    for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            var index = list.indexOf(this);
+            if (index !== -1) {
+                // remove image from the array once it's loaded
+                // for memory consumption reasons
+                list.splice(index, 1);
+            }
+        }
+        list.push(img);
+        img.src = array[i];
+    }
+}
+
+preloadImages(["../img/pict/ticket2.png", "../img/pict/maker2.png", "../img/pict/packhs2.png"]);

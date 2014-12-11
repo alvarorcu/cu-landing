@@ -1,34 +1,36 @@
 <!doctype html>
 
 <html class='no-js' lang='en'>
-    <head>
-        <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
-        <meta charset='utf-8'>
+  <head>
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    <meta charset='utf-8'>
 
-        <!-- Page Title Here -->
-        <title>CoreUpgrade 2015 - HackSpace Perú</title>
+    <!-- Page Title Here -->
+    <title>CoreUpgrade 2015 - HackSpace Perú</title>
 
-        <!-- Disable screen scaling-->
-        <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0'>
+    <!-- Disable screen scaling-->
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0'>
 
-        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        
-        <!-- Initializer -->
-        <link rel='stylesheet' href='../css/normalize.css'>        
-        
-        <!-- Web fonts and Web Icons -->
-        <link rel='stylesheet' href='../css/pageloader.css'>
-        <link rel='stylesheet' href='../fonts/opensans/stylesheet.css'>
-        <link rel='stylesheet' href='../css/ionicons.min.css'>
-        
-        <!-- Plugin Vendor style -->
-        <link rel='stylesheet' href='../css/foundation.min.css'>
-        
-        <link rel='stylesheet' href='../css/packs.css'>
-        
-        <script src='../js/vendor/modernizr-2.7.1.min.js'></script>
-    </head>
-    <body>
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    
+    <!-- Initializer -->
+    <link rel='stylesheet' href='../css/normalize.css'>        
+    
+    <!-- Web fonts and Web Icons -->
+    <link rel='stylesheet' href='../css/pageloader.css'>
+    <link rel='stylesheet' href='../fonts/opensans/stylesheet.css'>
+    <link rel='stylesheet' href='../css/ionicons.min.css'>
+    
+    <!-- Plugin Vendor style -->
+    <link rel='stylesheet' href='../css/foundation.min.css'>
+    
+    <link rel='stylesheet' href='../css/packs.css'>
+    <link rel='stylesheet' href='../css/settings.css'>
+    
+    <script src='../js/vendor/modernizr-2.7.1.min.js'></script>
+    <script src="https://cdn.firebase.com/js/client/2.0.5/firebase.js"></script>
+  </head>
+  <body>
         <!--[if lt IE 8]>
             <p class='browsehappy'>You are using an <strong>outdated</strong> browser. Please <a href='http://browsehappy.com/'>upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -38,29 +40,50 @@
             <div><i class='fa fa-play-circle-o  fa-spin'></i><p>loading</p></div>
         </div>
 -->
-        
+         <a id="go" rel="leanModal" href="#login">Basic</a>
+    
+    <div id="login">
+          <div>
+            <h3 class="invite">Inicia Sesión</h3>
+          </div>
+          <div>
+            <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
+            <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
+          </div>
+          <div>
+            <p>Inicia sesión con Facebook o Twitter para más información sobre cómo participar.</p>
+          </div>
+    </div>
 
-        <div class='site-config'
-             
-             data-date='01/02/2015 10:00:00' 
-             data-date-timezone='+5'
-             
-             
-             ></div>
+    <div id="lean_overlay"></div>
+    
+    <!-- Page Loader -->
+    <div class='page-loader'>
+      <div><i class='ion ion-loading-d'></i><p>loading</p></div>
+    </div>
 
-      <div class="row">
-        <div class="large-3 columns">
-          <h1><img src="http://placehold.it/400x100&text=Logo"></h1>
+    <div class="row header">-
+      <div class="avatar">
+        <div class="avatar-content">
+          <figure class="avatar-img">
+            <div class="settings">
+              <div class="item">Logout</div>
+            </div>
+            <img alt="avatar" src="../img/pict/avatar.png"/>
+          </figure>
         </div>
       </div>
+      <div class="large-3 small-6 columns">
+        <a href="index.html"><h1><img src="../img/pict/logoheader.png"></h1></a>
+      </div>
+    </div>
 
-        <div class="row">
-        <hr>
+        <div class="row product">
         <div class="large-5 columns">
           <img src="http://placehold.it/400x500">
         </div>
         <div class="large-7 columns">
-          <h4>This is a content section.</h4>
+          <h2>This is a content section.</h2>
           <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
 
         </div>
