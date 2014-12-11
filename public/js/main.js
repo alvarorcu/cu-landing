@@ -38,10 +38,12 @@ window.twttr = (function (d,s,id) {
   return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 }(document, "script", "twitter-wjs"));
 
+var stateTw = false;
 // On ready, register the callback...
 twttr.ready(function (twttr) {
     twttr.events.bind('tweet', function (event) {
         // your callback action here...
+        stateTw = true;
     });
 });
 
@@ -149,7 +151,7 @@ ref.onAuth(function(authData) {
                      }
                  });
 
-        $('.invite')[0].innerHTML =  "Compartir es amar ;)";
+        $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
 
         $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
         $('.navbar-login').attr('href', 'packs');
