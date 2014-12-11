@@ -63,8 +63,10 @@ function postfb()
             user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
         },
         function(response) {
-            if (response && response.post_id)
-                success = true;
+            if (response && response.post_id) {
+                ref.child('users').child(authData.uid).update({postedAlready: true});
+                window.location = "packs";
+            }
             else
                 alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
 
@@ -116,14 +118,7 @@ ref.onAuth(function(authData) {
                      else {
                          console.log("There is no child posted YET!");
                          if (authData.provider == "facebook"){
-                             var postfbSuccess = postfb();
-                             console.log(postfbSuccess);
-                             if(postfbSuccess){
-                                 ref.child('users').child(authData.uid).update({postedAlready: true});
-                                 window.location = "packs";
-                             }
-                             else{
-                             }
+                             postfb();
                          }
                          if (authData.provider == "twitter"){
                              window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
