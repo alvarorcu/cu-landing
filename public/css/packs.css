@@ -164,6 +164,9 @@ h2{
 
 #packs {
     margin-top: 1em;
+}
+
+.boli {
     margin-bottom: 2em;
 }
 
@@ -213,6 +216,9 @@ h2{
 
 .product {
   margin-top: 2em;
+}
+.show-for-small {
+  margin-top: 1em;
 }
 
 .modal-close {
