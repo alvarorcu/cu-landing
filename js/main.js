@@ -41,47 +41,34 @@ $(window).on('resize',function(){
   };
  
  
- function postfb()
+function postfb()
 {
-    FB.login(function(response)
-    {
-        if (response.authResponse)
+    FB.ui(
         {
- 
-            // Post message to your wall
- 
-            FB.ui(
-                {
-                 method: 'stream.publish',
-                 message: 'Hackspace',
-                 attachment: {
-                   name: 'Core Upgrade - Hackspace 2015',
-                   caption: 'Core Upgrade - Hackspace 2015',
-                   description: (
-                     'He ingresado al Core Upgrade - Hackspace 2015, tú también se parte de esta gran experiencia ingresa ahora te esperamos. '
-                 ),
+            method: 'stream.publish',
+            message: 'Hackspace',
+            attachment: {
+                name: 'Core Upgrade - Hackspace 2015',
+                caption: 'Core Upgrade - Hackspace 2015',
+                description: (
+                    'He ingresado al Core Upgrade - Hackspace 2015, tú también se parte de esta gran experiencia ingresa ahora te esperamos. '
+                ),
                 href: 'alvarorcu.github.io/cu-landing',
                 picture: 'https://fbcdn-photos-d-a.akamaihd.net/hphotos-ak-xpa1/t39.2081-0/p128x128/10574696_1584699925093511_967030902_n.png'
-                },
-                action_links: [
+            },
+            action_links: [
                 { text: 'Se parte de esta gran experiencia', href: 'alvarorcu.github.io/cu-landing' }
-                ],
-                user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
-                },
-                function(response) {
-                    if (response && response.post_id) {
-                        alert('El post fue publicado.');
-                        } else {
-                        alert('El post no fue publicado.');
-                    }
-                 }
-                );
-                }
-        else
-        {
-            alert('No se ha logeado');
+            ],
+            user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
+        },
+        function(response) {
+            if (response && response.post_id) {
+                alert('El post fue publicado.');
+            } else {
+                alert('El post no fue publicado.');
+            }
         }
-    }, { scope : 'publish_stream' });
+    );
 }
 
   (function(d, s, id){
@@ -111,15 +98,16 @@ ref.onAuth(function(authData) {
         // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
         // console.log(authData);
             
+        $('.facebook').click(function(){
+            postfb();
+        });
     } else {
         // user is logged out
+        $('.facebook').unbind('click');
+        $('.facebook').click(function(){
+            userLogin("facebok");   
+        });
     }
-});
-    
-document.querySelector('.facebook').addEventListener('click', function(){
-    console.log("facebook");
-    userLogin("facebook");
-    postfb();
 });
 document.querySelector('.twitter').addEventListener('click', function(){
     userLogin("twitter");
