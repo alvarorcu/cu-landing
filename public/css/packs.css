@@ -126,6 +126,16 @@ h2{
   background-color: rgba(0, 0, 0, 0.95);
 }
 
+.modalmsj {
+  display: none;
+  border: solid 1px white;
+  padding: 2em 3em 1em;
+  text-align: center;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.95);
+  max-width: 90%;
+}
+
 #login button {
   background: transparent;
   border: 1px solid currentColor;
@@ -203,6 +213,19 @@ h2{
 
 .product {
   margin-top: 2em;
+}
+
+.modal-close {
+  position:absolute;
+  right: 12px;
+  top: 8px;
+  color:#fff;
+  font-size: 1.5em;
+}
+
+.modal-close:hover, .modal-close:focus {
+  color:#cfcfcf;
+
 }
 
 footer p {

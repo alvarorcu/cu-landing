@@ -39,23 +39,7 @@
     <div><i class='fa fa-play-circle-o  fa-spin'></i><p>loading</p></div>
     </div>
     -->
-    <a id="go" rel="leanModal" href="#login">Basic</a>
-    
-    <div id="login">
-          <div>
-            <h3 class="invite">Inicia Sesión</h3>
-          </div>
-          <div>
-            <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
-            <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
-          </div>
-          <div>
-            <p>Inicia sesión con Facebook o Twitter para más información sobre cómo participar.</p>
-          </div>
-    </div>
-
-    <div id="lean_overlay"></div>
-    
+  
     <div class='site-config'
          
          data-date='05/02/2015 10:00:00' 
@@ -69,7 +53,7 @@
       <div><i class='ion ion-loading-d'></i><p>loading</p></div>
     </div>
 
-    <div class="row header">-
+    <div class="row header">
       <div class="avatar">
         <div class="avatar-content">
           <figure class="avatar-img">
@@ -115,7 +99,7 @@
                 <img class="holi" src="../img/pict/ticket.png">
                 <p class="trolis"><strike>S/.149.00</strike> S/.99.00</p> 
                 <p>Hasta el 26 de diciembre.</p>
-                <a class="columns button" href="#">
+                <a class="columns button" rel="modalMsj" href="#ticket">
                   Comprar Ticket
                 </a>
                 <a class="columns button" href="#">
@@ -133,7 +117,7 @@
           <img class="holi" src="../img/pict/maker.png">
           <p class="trolis"><strike>S/.269.00</strike> S/.249.00</p> 
           <p>Hasta el 26 de diciembre.</p>
-          <a class="columns button" href="#">
+          <a class="columns button" rel="modalMsj" href="#maker">
             Comprar Pack
           </a>
           <a class="columns button" href="#">
@@ -146,7 +130,7 @@
           <img class="holi" src="../img/pict/packhs.png">
           <p class="trolis"><strike>S/.319.00</strike> S/.299.00</p> 
           <p>Hasta el 26 de diciembre.</p>
-          <a class="columns button" href="#">
+          <a class="columns button" rel="modalMsj" href="#packhs">
             Comprar Pack
           </a>
           <a class="columns button" href="#">
@@ -178,6 +162,110 @@
 
       <!-- END OF site main content content here -->
 
+      <a id="go" rel="leanModal" href="#login">Basic</a>
+    
+    <div id="login">
+          <div>
+            <h3 class="invite">Inicia Sesión</h3>
+          </div>
+          <div>
+            <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
+            <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
+          </div>
+          <div>
+            <p>Inicia sesión con Facebook o Twitter para más información sobre cómo participar.</p>
+          </div>
+    </div>
+
+    <div id="ticket" class="modalmsj" >
+          <a class="modal-close"><i class="ion-close-circled"></i></a>
+          <div>
+            <h2 class="invite">Tienes dos opciones de compra:</h2>
+          </div>
+      <div class="row">
+        <div class="large-6 small-12 columns">
+          <h3>Pago Online</h3>
+          <p>Puedes pagar de manera online mediante Paypal. El Ticket comprado por esta opción cuesta <strong>$35.00</strong> dólares americanos.
+          </p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="FEJNJU3DJ8NC8">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p>Apenas realices el pago te enviaremos tu código de activación a tu correo electrónico.</p>
+        </div>
+
+        <div class="large-6 small-12 columns">
+          <h3>Pago en Oficina</h3>
+          <p>Puedes acercarte a nuestras oficinas para pagar por el Ticket. El Ticket comprado por esta opción cuesta <strong>S/.99.00</strong> Nuevos Soles.</p>
+          <p>Te entregaremos de manera física tu código de activación y también te lo enviaremos por correo electrónico.</p>
+          <p>Nuestras oficinas están ubicadas en:<br>
+            Calle Almirante Guisse 1198, Jesús María.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="maker" class="modalmsj" >
+      <a class="modal-close"><i class="ion-close-circled"></i></a>
+          <div>
+            <h2 class="invite">Tienes dos opciones de compra:</h2>
+          </div>
+      <div class="row">
+        <div class="large-6 small-12 columns">
+          <h3>Pago Online</h3>
+          <p>Puedes pagar de manera online mediante Paypal. El Pack Maker comprado por esta opción cuesta <strong>$85.00</strong> Dólares Americanos.
+          </p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="NFQXLFHTWERPJ">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p>Apenas realices el pago te enviaremos tu código de activación a tu correo electrónico y el Pack te estará llegando a tu casa a partir del 20 de diciembre. El delivery es completamente gratuito.</p>
+        </div>
+
+        <div class="large-6 small-12 columns">
+          <h3>Pago en Oficina</h3>
+          <p>Puedes acercarte a nuestras oficinas para pagar por tu Pack. El Pack Maker comprado por esta opción cuesta <strong>S/.249.00</strong> Nuevos Soles.</p>
+          <p>Te entregaremos ahí mismo tu código de activación, pero el pack te llegará a tu casa a partir del 20 de diciembre.</p>
+          <p>Nuestras oficinas están ubicadas en:<br>
+            Calle Almirante Guisse 1198, Jesús María.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="packhs" class="modalmsj" >
+      <a class="modal-close"><i class="ion-close-circled"></i></a>
+          <div>
+            <h2 class="invite">Tienes dos opciones de compra:</h2>
+          </div>
+      <div class="row">
+        <div class="large-6 small-12 columns">
+          <h3>Pago Online</h3>
+          <p>Puedes pagar de manera online mediante Paypal. El Pack HackSpace comprado por esta opción cuesta <strong>$103.00</strong> Dólares Americanos.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="FMMRJBMTG9JML">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p>Apenas realices el pago te enviaremos tu código de activación a tu correo electrónico y el Pack te estará llegando a tu casa a partir del 20 de diciembre. El delivery es completamente gratuito.</p>
+        </div>
+
+        <div class="large-6 small-12 columns">
+          <h3>Pago en Oficina</h3>
+          <p>Puedes acercarte a nuestras oficinas para pagar por tu Pack. El Pack HackSpace comprado por esta opción cuesta <strong>S/299.00</strong> Nuevos Soles.</p>
+          <p>Te entregaremos ahí mismo tu código de activación, pero el pack te llegará a tu casa a partir del 20 de diciembre.</p>
+          <p>Nuestras oficinas están ubicadas en:<br>
+            Calle Almirante Guisse 1198, Jesús María.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="lean_overlay"></div>
+
 
       <!--        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>-->
 
@@ -197,6 +285,8 @@
       <script src='../js/jquery.downCount.js'></script>
       <script src='../js/jquery.maximage.js'></script>
       <script src='../js/jquery.leanModal.min.js'></script>
+      <script src='../js/modalmsj.js'></script>
+
 
       <script src='../js/packs.js'></script>
 
