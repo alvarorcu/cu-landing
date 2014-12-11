@@ -6,6 +6,11 @@ $(window).on('resize',function(){
 /* Page Loader : hide loader when all are loaded */
 $(window).load(function(){
     $('.page-loader').addClass('hidden');
+    
+    $('.avatar-img img').click(function () {
+        console.log( "img", this );
+        $('.settings').slideToggle();
+    });
 });
 
 /* END OF Page Loader : hide loader when all are loaded */
@@ -45,6 +50,10 @@ ref.onAuth(function(authData) {
         var fullName = findFullName(authData);
         document.querySelector('.avatar img')
             .setAttribute("src", findProfilePic(authData));
+        
+        $('.settings').click(function(){
+            ref.unauth();
+        });
         
         if (authData.provider == "facebook" && admins.indexOf(authData.facebook.id) != -1  ){
             document.querySelector('.activation_codes')

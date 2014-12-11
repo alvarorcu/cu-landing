@@ -16,11 +16,12 @@ $(window).load(function(){
 /*************************************/
 
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
+var users = ref.child('users');
 
 ref.onAuth(function(authData) {
     if (authData) {
 
-        ref.child('users').child(authData.uid).on("value", function(snapshot){
+        ref.child('users').child(authData.uid).once("value", function(snapshot){
             if(snapshot.val()){
                 console.log("user already exists");
                 console.log(snapshot.val());
@@ -37,14 +38,25 @@ ref.onAuth(function(authData) {
         $('.settings').click(function(){
             ref.unauth();
         });
+        
+        users.child(authData.uid).child('activated').once("value", function(activated){
+            if(activated.val()){
+                console.log("user is already activated, no need to show the activation input");
+                $('.activation-code').remove();
+                $('#contador').show("slow");
+            }
+            else{
+                console.log("User is not Activated but we are just fooling around");
+                $(".activation-code button").click(function(){
+                    var activationCode = $(".activation-code input").val();
+                    sendActivationCode(activationCode, authData);
+                });
+            }
+        });
 
         $("#lean_overlay").fadeOut(200);
         $("#login").css({"display":"none"});
 
-        $(".activation-code button").click(function(){
-            var activationCode = $(".activation-code input").val();
-            sendActivationCode(activationCode, authData);
-        });
     } else {
         $("#go").leanModal();
         $("#go").trigger('click');
@@ -74,24 +86,47 @@ function userLogin(Provider){
 function sendActivationCode(activationCode, authData){
     var ref = new Firebase("https://core-upgrade.firebaseio.com");
     var guids = ref.child('guids');
-
-    guids.child('-' + activationCode).on("value", function(activationCode){
-        if(activationCode.val()){
-            console.log(activationCode.val());
-            ref.child('users').child(authData.uid).child('activation_code').on("value", function(activation_code){
-                if(activation_code.val()) {
-                    console.log('user already activation_code');
+    var users  = ref.child('users');
+    
+    guids.child('-' + activationCode)
+        .once("value", function(activation_code){
+            console.log(activation_code.val());
+            if(activation_code.val()){
+                if(!activation_code.val()['used']){
+                    console.log("Codigo es valido y puede ser usado");
+                    
+                    ref.child('users')
+                        .child(authData.uid)
+                        .child('activated')
+                        .once("value", function(activated){
+                            if(activated.val()) {
+                                console.log(activated.val());
+                                console.log('user already activated');
+                                alert("Usuario ya esta activado, no gaster tu codigo");
+                            }
+                            else {
+                                console.log("Activating User");
+                                users.child(authData.uid)
+                                    .update({
+                                        activated: true,
+                                        activation_code: activationCode
+                                    });
+                                guids.child('-' + activationCode).update({used: true});
+                                $('.activation-code').remove();
+                                $('#contador').show("slow");
+                                
+                            }
+                        });
                 }
-                else {
-                    console.log("Activating User");
-                    console.log(ref);
-                    ref.child('users').child(authData.uid).update({activation_code: activation_code.val()});
+                else{
+                    console.log('Codigo ya fue usado');
                 }
-            });
-        }
-        else
-            console.log("NO found");
-    });
+            }
+            else{
+                console.log("NO activation ode found");
+                alert("Codigo Incorreccto");
+            }
+        });
 
 }
 function findProfilePic(authData){
