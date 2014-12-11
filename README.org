@@ -1,9 +1,22 @@
 * How to use this
 Clone the repo and install nodejs, you have to have npm installed as well
+** Development
 #+begin_src sh
-npm install
+git checkout -B <your-branch-name>
+# Use sudo if needed
+(sudo) npm install
 # awkward pause
 node app
 #+end_src
 
 Then visit [[http:localhost:3000][localhost:300]]
+
+** Production
+#+begin_src sh
+# Be sure to be in the master branch for testing
+git checkout master 
+# Use sudo if needed
+(sudo) npm install
+# awkward pause
+node app
+#+end_src
