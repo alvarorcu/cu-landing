@@ -28,27 +28,6 @@ $(window).on('resize',function(){
 });
 
 /*************************************/
-/******* Add twitter functions *******/
-/*************************************/
-// Include the Twitter Library
-window.twttr = (function (d,s,id) {
-  var t, js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-  js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-}(document, "script", "twitter-wjs"));
-
-var stateTw = false;
-// On ready, register the callback...
-twttr.ready(function (twttr) {
-    twttr.events.bind('tweet', function (event) {
-        // your callback action here...
-        stateTw = true;
-    });
-});
-
-
-/*************************************/
 /******* Add fb sdk functions ********/
 /*************************************/
 window.fbAsyncInit = function() {
@@ -295,7 +274,7 @@ $(function(){
 $(document).ready(function() {
     $('#mainpage').fullpage({
         //        verticalCentered: true,
-		    anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
+            anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
         //        menu: '.mm',
         //        resize : false,
         css3: true,
