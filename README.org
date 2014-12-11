@@ -6,4 +6,4 @@ npm install
 node app
 #+end_src
 
-Then visit [[localhost:300][http://localhost:3000]]
+Then visit [[http:localhost:3000][localhost:300]]
