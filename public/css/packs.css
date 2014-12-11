@@ -67,6 +67,12 @@ h2{
     margin-bottom: 0.4em;
 }
 
+::-webkit-input-placeholder { font-family: "OpenSans"; color: #424242;}
+
+:-moz-placeholder { font-family: "OpenSans"; color: #424242;}
+::-moz-placeholder { font-family: "OpenSans"; color: #424242;}
+:-ms-input-placeholder { font-family: "OpenSans"; color: #424242;}
+
 .trolis
 {
     margin-bottom:0.1rem;
@@ -114,7 +120,28 @@ h2{
 #login {
 	display: none;
 	border: solid 1px white;
-	padding: 2em;
+	padding: 2em 3em 1em;
+  text-align: center;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+#login button {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: #e5e5e5;
+  font-family: 'OpenSans-Bold';
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.5rem;
+  width: 4rem;
+  margin: 0 1em;
+}
+
+#login p {
+  margin-top: 1.5em;
 }
 
 .desc {
@@ -174,6 +201,9 @@ h2{
   margin-bottom: 1em;
 }
 
+.product {
+  margin-top: 2em;
+}
 
 footer p {
 font-size: 0.8rem;
