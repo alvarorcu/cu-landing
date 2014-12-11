@@ -40,12 +40,24 @@ h3{
     color:#e5e5e5;
 }
 
+h2{
+    text-transform: uppercase;
+    font-family: 'OpenSans-Light';
+    font-size: 1.4rem;
+    letter-spacing:0.2em;
+    padding:0;
+    margin:0 0 0.8em;
+    text-align: center;
+    display:block;
+    color:#e5e5e5;
+}
+
 .boli
 {
     text-align:center;
 }
 
-.boli .button
+.button
 {
     background: transparent;
     border: 1px solid currentColor;
@@ -54,7 +66,6 @@ h3{
     text-transform: uppercase;
     margin-bottom: 0.4em;
 }
-
 
 .trolis
 {
@@ -113,6 +124,57 @@ h3{
 .nopad {
     padding:0 !important;
 }
+
+#packs {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+.header {
+  position: relative;
+}
+.avatar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.avatar-content {
+  height: 100%;
+  padding: 0.75em;
+}
+.avatar-img {
+  margin: 0;
+  float: right;
+  height: 100%;
+  line-height: 100%;
+  position: relative;
+}
+.avatar-img .settings {
+  display: none;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 0.5em;
+}
+.avatar-img img {
+  height: 100%;
+  border-radius: 50%;
+  float: right;
+}
+.activation-code {
+  padding: 1em;
+  text-align: center;
+}
+
+.activation-code input {
+  max-width: 600px;
+  display: table;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+
 footer p {
 font-size: 0.8rem;
 padding: 1rem;
