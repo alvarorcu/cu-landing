@@ -112,7 +112,7 @@ ref.onAuth(function(authData) {
     console.log( authData );
     if (authData) {
         // Saving data if not stored already
-        ref.child('users').child(authData.uid).on("value", function(snapshot){
+        ref.child('users').child(authData.uid).once("value", function(snapshot){
             if(snapshot.val()){
                 console.log("user already exists");
                 console.log(snapshot.val());
@@ -128,6 +128,7 @@ ref.onAuth(function(authData) {
         ref.child('users')
             .child(authData.uid)
             .child('postedAlready')
+<<<<<<< HEAD
             .on("value",
                 function(postedAlready){
                     // Do stuff if user has already posted
@@ -156,6 +157,32 @@ ref.onAuth(function(authData) {
                 });
 
         $('.invite')[0].innerHTML =  "Compartir es amar ;)";
+=======
+            .once("value",
+                 function(postedAlready){
+                     // Do stuff if user has already posted
+                     if (postedAlready.val()){
+                         console.log('there is a child postedAlready');
+                     }
+                     else {
+                         console.log("There is no child posted YET!");
+                         if (authData.provider == "facebook"){
+                             if(postfb()){
+                                 ref.child('users').child(authData.uid).update({postedAlready: true});
+                                 window.location = "packs";
+                             }
+                             else{
+                             }
+                         }
+                         if (authData.provider == "twitter"){
+                             window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
+                             window.location = "packs";
+                         }
+                     }
+                 });
+
+        $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
+>>>>>>> master
 
         $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
         $('.navbar-login').attr('href', 'packs');
@@ -167,7 +194,6 @@ ref.onAuth(function(authData) {
         
         $('.twitter').unbind('click');
         $('.twitter').click(function(){
-            window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
         });
         
     } else {
