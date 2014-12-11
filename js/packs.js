@@ -89,7 +89,6 @@ $(function() {
             .mouseover(function() { 
                 var src = $(this).attr("src").match(/[^\.]+/) + "2.png";
                 $(this).attr("src", src);
-                console.log(src);
             })
             .mouseout(function() {
                 var src = $(this).attr("src").replace("2.png", ".png");
