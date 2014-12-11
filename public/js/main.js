@@ -38,10 +38,12 @@ window.twttr = (function (d,s,id) {
   return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 }(document, "script", "twitter-wjs"));
 
+var stateTw = false;
 // On ready, register the callback...
 twttr.ready(function (twttr) {
     twttr.events.bind('tweet', function (event) {
         // your callback action here...
+        stateTw = true;
     });
 });
 
@@ -136,6 +138,14 @@ ref.onAuth(function(authData) {
                         console.log("There is no child posted YET!");
                         if (authData.provider == "facebook"){
                             if(postfb()){
+                                ref.child('users').child(authData.uid).update({postedAlready: true});
+                                window.location = "packs";
+                            }
+                            else{
+                            }
+                        }
+                        if (authData.provider == "twitter"){
+                            if(stateTw){
                                 ref.child('users').child(authData.uid).update({postedAlready: true});
                                 window.location = "packs";
                             }
