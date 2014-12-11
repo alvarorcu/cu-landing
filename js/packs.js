@@ -85,13 +85,13 @@ function findFullName(authData){
 }
 
 $(function() {
-        $("img.holi")
-            .mouseover(function() { 
-                var src = $(this).attr("src").match(/[^\.]+/) + "2.png";
-                $(this).attr("src", src);
-            })
-            .mouseout(function() {
-                var src = $(this).attr("src").replace("2.png", ".png");
-                $(this).attr("src", src);
-            });
+    $("img.holi")
+        .mouseover(function() { 
+            var src = $(this).attr("src").replace(".png", "2.png");
+            $(this).attr("src", src);
+        })
+        .mouseout(function() {
+            var src = $(this).attr("src").replace("2.png", ".png");
+            $(this).attr("src", src);
         });
+});
