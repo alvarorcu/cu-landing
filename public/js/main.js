@@ -130,27 +130,33 @@ ref.onAuth(function(authData) {
 
         $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
         $('.navbar-login').attr('href', 'packs');
+        
         $('.facebook').unbind('click');
         $('.facebook').click(function(){
             postfb();
         });
+        
+        $('.twitter').unbind('click');
+        $('.twitter').click(function(){
+            window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
+        });
+        
     } else {
         // user is logged out
         $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
         $('.navbar-login').attr('href', '#login');
 
         $('.facebook').unbind('click');
-
         $('.facebook').click(function(){
             userLogin("facebook");
         });
+        
+        $('.twitter').unbind('click');
+        $('.twitter').click(function(){
+            userLogin("twitter");
+        });
     }
 });
-
-document.querySelector('.twitter').addEventListener('click', function(){
-    window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://alvarorcu.github.io","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
-    userLogin("twitter");
-   });
     
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){
