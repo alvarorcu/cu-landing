@@ -30,19 +30,20 @@ $(window).on('resize',function(){
 /*************************************/
 /******* Add fb sdk functions ********/
 /*************************************/
-    window.fbAsyncInit = function() {
+window.fbAsyncInit = function() {
     FB.init({
-      appId      : '1584684295095074',
-      status     : true, 
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.2'
+        appId      : '1584684295095074',
+        status     : true, 
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.2'
     });
-  };
+};
  
  
 function postfb()
 {
+    var success = false;
     FB.ui(
         {
             method: 'stream.publish',
@@ -62,14 +63,11 @@ function postfb()
             user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
         },
         function(response) {
-            if (response && response.post_id) {
-                ref.child('users').child(authData.uid).update({postedAlready: true});
-                window.location = "packs";
-            } else {
-                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
-            }
+            if (response && response.post_id)
+                success = true;
         }
     );
+    return success;
 }
 
   (function(d, s, id){
@@ -84,14 +82,10 @@ function postfb()
 /** Here comes the Fire to the Base **/
 /*************************************/
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
+
 ref.onAuth(function(authData) {
     console.log( authData );
     if (authData) {
-        // user authenticated with Firebase
-
-        // document.querySelector('.avatar img')
-        //     .setAttribute("src", findProfilePic(authData));
-        
         // Saving data if not stored already
         ref.child('users').child(authData.uid).on("value", function(snapshot){
             if(snapshot.val()){
@@ -117,7 +111,15 @@ ref.onAuth(function(authData) {
                     }
                     else {
                         console.log("There is no child posted YET!");
-                        postfb();
+                        if (authData.provider == "facebook"){
+                            if(postfb()){
+                                ref.child('users').child(authData.uid).update({postedAlready: true});
+                                window.location = "packs";
+                            }
+                            else{
+                                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
+                            }
+                        }
                     }
                 });
 
@@ -148,7 +150,7 @@ function userLogin(Provider){
         console.log(authData);
     },{
         rememberMe: true,
-        scope: 'email'
+        scope: 'email, publish_stream'
     });
 }
 function findProfilePic(authData){
