@@ -30,3 +30,14 @@
   border-radius: 50%;
   float: right;
 }
+.activation-code {
+  padding: 1em;
+  text-align: center;
+}
+.activation-code input {
+  border-radius: 10px;
+  max-width: 600px;
+  display: table;
+  margin: auto;
+  margin-bottom: 1em;
+}
