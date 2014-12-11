@@ -134,7 +134,25 @@ ref.onAuth(function(authData) {
                  function(postedAlready){
                      // Do stuff if user has already posted
                      if (postedAlready.val()){
+                         
+                         window.location = "#login";
+                         
                          console.log('there is a child postedAlready');
+                         if(authData.provider == "facebook"){
+                             $('.facebook').unbind('click');
+                             $('.facebook').click(function(){
+                                 postfb(authData);
+                             });
+                             $('.twitter').remove();
+                         }
+                         if (authData.provider == "twitter"){
+                             $('.twitter').unbind('click');
+                             $('.twitter').click(function(){
+                                 window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
+                                 window.location = "packs";
+                             });
+                             $('.facebook').remove();
+                         }
                      }
                      else {
                          console.log("There is no child posted YET!");
@@ -160,29 +178,27 @@ ref.onAuth(function(authData) {
                      }
                  });
 
-        $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
+    $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
 
-        $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
-        $('.navbar-login').attr('href', 'packs');
+    $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
+    $('.navbar-login').attr('href', 'packs');
         
-        
-        
-    } else {
-        // user is logged out
-        $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
-        $('.navbar-login').attr('href', '#login');
+} else {
+    // user is logged out
+    $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
+    $('.navbar-login').attr('href', '#login');
 
-        $('.facebook').unbind('click');
-        $('.facebook').click(function(){
-            userLogin("facebook");
-        });
+    $('.facebook').unbind('click');
+    $('.facebook').click(function(){
+        userLogin("facebook");
+    });
         
-        $('.twitter').unbind('click');
-        $('.twitter').click(function(){
-            userLogin("twitter");
-        });
-    }
-});
+    $('.twitter').unbind('click');
+    $('.twitter').click(function(){
+        userLogin("twitter");
+    });
+}
+          });
     
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){
@@ -300,7 +316,7 @@ $(function(){
 $(document).ready(function() {
     $('#mainpage').fullpage({
         //        verticalCentered: true,
-            anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
+        anchors: ['inicio', 'curricula', 'aquien' , 'login', 'nosotros', 'contacto'],
         //        menu: '.mm',
         //        resize : false,
         css3: true,
