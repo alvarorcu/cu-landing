@@ -148,9 +148,9 @@ ref.onAuth(function(authData) {
 });
 
 document.querySelector('.twitter').addEventListener('click', function(){
-    userLogin("twitter");
     window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://alvarorcu.github.io");
-});
+    userLogin("twitter");
+   });
     
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){
