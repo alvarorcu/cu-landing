@@ -39,6 +39,7 @@ ref.onAuth(function(authData) {
         
         $('.settings').click(function(){
             ref.unauth();
+            authData = null;
         });
         
         current_user.child('activated').once("value", function(activated){
@@ -52,18 +53,25 @@ ref.onAuth(function(authData) {
                 current_user.child('banned').once("value", function(banned){
                     if(banned.val()){
                         
-                        $('.activation-code').html("<h2> Superaste los 3 intentos, vuelve en unos minutos! :) </h2>");
-                        
                         current_user.child('bannedAt').once("value",function(bannedAt){
                             if(bannedAt.val()){
                                 console.log("bannedAt time: ", bannedAt.val());
                                 var currentTime = new Date();
                                 var elapsedTime = (currentTime.getTime() - bannedAt.val()) / 60000;
+                                
+                                
                                 if(elapsedTime > 10){
                                     current_user.update({banned: false, strikes: 0});
                                     location.reload(); 
                                 }
                                 else{
+                                    var remainingMinutes = (11 - elapsedTime).toString().split('.')[0];
+                                    if(remainingMinutes > 1){
+                                        $('.activation-code').html("<h2> Superaste los 3 intentos, vuelve en unos "+ remainingMinutes +" minutos! :) </h2>");
+                                    }
+                                    else{
+                                        $('.activation-code').html("<h2> Superaste los 3 intentos, vuelve en 1 minuto! :) </h2>");
+                                    }
                                     console.log("You have not passed 10 minutes yet, you have passed: ", elapsedTime);
                                 }
                             }
@@ -144,18 +152,18 @@ function sendActivationCode(activationCode, authData){
                         });
                 }
                 else{
-                    console.log('Codigo ya fue usado');
+                    alert('Codigo ya fue usado');
                     strikeUp(current_user);
                 }
             }
             else{
-                console.log("NO activation ode found");
-                alert("Codigo Incorreccto");
+                alert.log("Ese codigo no fue encontrado en nuestra base de datos");
                 strikeUp(current_user);
             }
         });
 
 }
+
 function strikeUp(current_user){
     current_user.child('strikes').once("value",function(strikes){
         if(strikes.val()) {
@@ -165,8 +173,14 @@ function strikeUp(current_user){
                 location.reload();
             }
             else{
-                current_user.update({strikes: strikes.val()+1});
-                console.log("Tienes: " + strikes.val() + " strikes");
+                current_user.update({strikes: strikes.val()+1}, function(error){
+                    if(error){
+                        console.log("Synchronization failed at strikes");
+                    }
+                    else {
+                        console.log("Tienes: " + strikes.val() + " strikes");
+                    }
+                });
             }
         }
         else{
