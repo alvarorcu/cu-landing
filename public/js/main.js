@@ -130,36 +130,6 @@ ref.onAuth(function(authData) {
         ref.child('users')
             .child(authData.uid)
             .child('postedAlready')
-<<<<<<< HEAD
-            .on("value",
-                function(postedAlready){
-                    // Do stuff if user has already posted
-                    if (postedAlready.val()){
-                        console.log('there is a child postedAlready');
-                    }
-                    else {
-                        console.log("There is no child posted YET!");
-                        if (authData.provider == "facebook"){
-                            if(postfb()){
-                                ref.child('users').child(authData.uid).update({postedAlready: true});
-                                window.location = "packs";
-                            }
-                            else{
-                            }
-                        }
-                        if (authData.provider == "twitter"){
-                            if(stateTw){
-                                ref.child('users').child(authData.uid).update({postedAlready: true});
-                                window.location = "packs";
-                            }
-                            else{
-                            }
-                        }
-                    }
-                });
-
-        $('.invite')[0].innerHTML =  "Compartir es amar ;)";
-=======
             .once("value",
                  function(postedAlready){
                      // Do stuff if user has already posted
@@ -179,10 +149,6 @@ ref.onAuth(function(authData) {
                  });
 
         $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 
         $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
         $('.navbar-login').attr('href', 'packs');
