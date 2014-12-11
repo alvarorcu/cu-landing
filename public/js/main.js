@@ -41,7 +41,7 @@ window.fbAsyncInit = function() {
 };
  
  
-function postfb()
+function postfb(authData)
 {
     var success = false;
     FB.ui(
@@ -118,7 +118,7 @@ ref.onAuth(function(authData) {
                      else {
                          console.log("There is no child posted YET!");
                          if (authData.provider == "facebook"){
-                             postfb();
+                             postfb(authData);
                          }
                          if (authData.provider == "twitter"){
                              window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
