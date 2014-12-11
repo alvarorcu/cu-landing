@@ -18,12 +18,6 @@ $(window).load(function(){
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 var guids = ref.child('guids');
 
-var paymentMethods = {
-    paypal: guids.child('paypal'),
-    deposit: guids.child('deposit'),
-    manual: guids.child('manual')
-};
-
 var admins = [
     "758637690840380",   // Nohelia
     "863811930325042",   // Cristhian
@@ -33,15 +27,15 @@ var admins = [
 ];
 
 function pushPaymentMethod(payment_method, creator, pulpi_email){
-    var firebase_ref = paymentMethods[payment_method];
     var now = new Date();
     var result  = {
+        payment_method: payment_method,
         used: false,
         creator: creator,
         pulpi_email: pulpi_email,
         createdAt: now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear() +" " + now.getHours() + ":" + now.getMinutes()
     };
-    var new_push = firebase_ref.push(result);
+    var new_push = guids.push(result);
     return new_push.key();
 }
 ref.onAuth(function(authData) {
@@ -68,7 +62,7 @@ ref.onAuth(function(authData) {
                         var pulpi_email = $('input[name=pulpi_email]').val();
                         if(pulpi_email){
                             var key = pushPaymentMethod(payment_method, creator, pulpi_email);
-                            $('#copy-code').append("<h2>" + key.substring(1,key.length) + "   email: " + pulpi_email + "</h2>");
+                            $('#copy-code').append("<h3 style=\"text-transform: none;\">" + key.substring(1,key.length) + "   email: " + pulpi_email + "</h3>");
                         }
                         else{
                             alert("NO puede estar vacio");

@@ -41,6 +41,10 @@ ref.onAuth(function(authData) {
         $("#lean_overlay").fadeOut(200);
         $("#login").css({"display":"none"});
 
+        $(".activation-code button").click(function(){
+            var activationCode = $(".activation-code input").val();
+            sendActivationCode(activationCode, authData);
+        });
     } else {
         $("#go").leanModal();
         $("#go").trigger('click');
@@ -68,6 +72,26 @@ function userLogin(Provider){
     });
 }
 function sendActivationCode(activationCode, authData){
+    var ref = new Firebase("https://core-upgrade.firebaseio.com");
+    var guids = ref.child('guids');
+
+    guids.child('-' + activationCode).on("value", function(activationCode){
+        if(activationCode.val()){
+            console.log(activationCode.val());
+            ref.child('users').child(authData.uid).child('activation_code').on("value", function(activation_code){
+                if(activation_code.val()) {
+                    console.log('user already activation_code');
+                }
+                else {
+                    console.log("Activating User");
+                    console.log(ref);
+                    ref.child('users').child(authData.uid).update({activation_code: activation_code.val()});
+                }
+            });
+        }
+        else
+            console.log("NO found");
+    });
 
 }
 function findProfilePic(authData){
