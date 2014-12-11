@@ -1,0 +1,7 @@
+* How to use this
+Clone the repo and install nodejs, you have to have npm installed as well
+#+begin_src sh
+npm install
+# awkward pause
+node app
+#+end_src

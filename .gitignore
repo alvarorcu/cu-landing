@@ -1,3 +1,4 @@
 *.db
 thumbs.db
 .tern*
+node_modules
