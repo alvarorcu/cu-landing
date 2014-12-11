@@ -19,7 +19,17 @@ var ref = new Firebase("https://core-upgrade.firebaseio.com");
 
 ref.onAuth(function(authData) {
     if (authData) {
-        // user authenticated with Firebase
+
+        ref.child('users').child(authData.uid).on("value", function(snapshot){
+            if(snapshot.val()){
+                console.log("user already exists");
+                console.log(snapshot.val());
+            }
+            else{
+                console.log("Adding user");
+                ref.child('users').child(authData.uid).set(authData); 
+            }
+        });
 
         document.querySelector('.avatar img')
             .setAttribute("src", findProfilePic(authData));
@@ -39,7 +49,7 @@ ref.onAuth(function(authData) {
                           "../img/pict/avatar.jpg");
         
     }
-          });
+});
 
 $('.facebook').click(function(){
     userLogin("facebook");

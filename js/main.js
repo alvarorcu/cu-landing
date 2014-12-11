@@ -65,6 +65,9 @@ function postfb()
         function(response) {
             if (response && response.post_id)
                 success = true;
+            else
+                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
+
         }
     );
     return success;
@@ -81,6 +84,7 @@ function postfb()
 /*************************************/
 /** Here comes the Fire to the Base **/
 /*************************************/
+
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 
 ref.onAuth(function(authData) {
@@ -117,7 +121,6 @@ ref.onAuth(function(authData) {
                                 window.location = "packs";
                             }
                             else{
-                                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
                             }
                         }
                     }
@@ -133,14 +136,17 @@ ref.onAuth(function(authData) {
         });
     } else {
         // user is logged out
-        $('.navbar-login')[0].innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
+        $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
         $('.navbar-login').attr('href', '#login');
+
         $('.facebook').unbind('click');
+
         $('.facebook').click(function(){
-            userLogin("facebok");   
+            userLogin("facebook");
         });
     }
 });
+
 document.querySelector('.twitter').addEventListener('click', function(){
     userLogin("twitter");
 });
