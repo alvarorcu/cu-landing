@@ -5,3 +5,5 @@ npm install
 # awkward pause
 node app
 #+end_src
+
+Then visit [[localhost:300][http://localhost:3000]]
