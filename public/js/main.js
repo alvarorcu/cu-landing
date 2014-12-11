@@ -134,7 +134,7 @@ ref.onAuth(function(authData) {
         
         $('.facebook').unbind('click');
         $('.facebook').click(function(){
-            postfb();
+            postfb(authData);
         });
         
         $('.twitter').unbind('click');
