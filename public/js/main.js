@@ -116,7 +116,9 @@ ref.onAuth(function(authData) {
                      else {
                          console.log("There is no child posted YET!");
                          if (authData.provider == "facebook"){
-                             if(postfb()){
+                             var postfbSuccess = postfb();
+                             console.log(postfbSuccess);
+                             if(postfbSuccess){
                                  ref.child('users').child(authData.uid).update({postedAlready: true});
                                  window.location = "packs";
                              }
