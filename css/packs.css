@@ -47,39 +47,42 @@ h3{
 
 .boli .button
 {
+    background: transparent;
+    border: 1px solid currentColor;
+    color: #e5e5e5;
+    font-family: 'OpenSans-Light';
+    text-transform: uppercase;
     margin-bottom: 0.4em;
 }
+
+
 .trolis
 {
     margin-bottom:0.1rem;
     padding: 1rem;
+    padding-bottom: 0.2rem;
+    font-size: 1.2rem;
+}
+
+.trolis strike {
+    font-size: 0.8rem;
+    color: #e42038;
 }
 
 .hideThis {
     display: none;
 }
 
-.rojo .button {
-    background-color: #e42038;
-    border-color: #ba2048;
-}
-
 .rojo .button:hover, .rojo .button:focus {
-    background-color: #ba2048;
+    background-color: #e42038;
 }
 
 .arrow {
     margin-top: 2.5em;
 }
 
-.amarillo .button {
-    background-color: #f6e722;
-    border-color: #c4b020;
-    color:#000;
-}
-
 .amarillo .button:hover, .amarillo .button:focus {
-    background-color: #c4b020;
+    background-color: #f6e722;
 }
 
 #go {
