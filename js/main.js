@@ -30,6 +30,15 @@ $(window).on('resize',function(){
 /*************************************/
 /******* Add fb sdk functions ********/
 /*************************************/
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
     window.fbAsyncInit = function() {
     FB.init({
       appId      : '1584684295095074',
@@ -40,16 +49,11 @@ $(window).on('resize',function(){
     });
   };
  
+var fbpostSuccess = false;
+
  
  function postfb()
 {
-    FB.login(function(response)
-    {
-        if (response.authResponse)
-        {
- 
-            // Post message to your wall
- 
             FB.ui(
                 {
                  method: 'stream.publish',
@@ -71,31 +75,19 @@ $(window).on('resize',function(){
                 function(response) {
                     if (response && response.post_id) {
                         alert('El post fue publicado.');
+                        fbpostSuccess = true;
                         } else {
                         alert('El post no fue publicado.');
                     }
                  }
                 );
-                }
-        else
-        {
-            alert('No se ha logeado');
-        }
-    }, { scope : 'publish_stream' });
 }
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
 
 /*************************************/
 /** Here comes the Fire to the Base **/
 /*************************************/
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
+var loggedIn = false;
 ref.onAuth(function(authData) {
     console.log( "authData" );
     if (authData) {
@@ -105,20 +97,27 @@ ref.onAuth(function(authData) {
         //     .setAttribute("src", findProfilePic(authData));
         
         // Saving data
+        loggedIn = true;
         ref.child('users').child(authData.uid).set(authData);
 
-        window.location = "packs";
+        // deactivate for now until we get the hasPosted? in the firebase shiiit
+        // if(hasPostedBefore)
+        //     window.location = "packs";
+
         // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
         // console.log(authData);
             
     } else {
+        loggedIn = false;
         // user is logged out
     }
 });
     
 document.querySelector('.facebook').addEventListener('click', function(){
     console.log("facebook");
-    userLogin("facebook");
+
+    if(!loggedIn)
+        userLogin("facebook");   
     postfb();
 });
 document.querySelector('.twitter').addEventListener('click', function(){
@@ -130,7 +129,7 @@ function userLogin(Provider){
         console.log(authData);
     },{
         rememberMe: true,
-        scope: 'email'
+        scope: 'email, publish_stream'
     });
 }
 function findProfilePic(authData){
