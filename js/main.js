@@ -63,9 +63,10 @@ function postfb()
         },
         function(response) {
             if (response && response.post_id) {
-                alert('El post fue publicado.');
+                ref.child('users').child(authData.uid).update({postedAlready: true});
+                window.location = "packs";
             } else {
-                alert('El post no fue publicado.');
+                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
             }
         }
     );
@@ -84,25 +85,54 @@ function postfb()
 /*************************************/
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 ref.onAuth(function(authData) {
-    console.log( "authData" );
+    console.log( authData );
     if (authData) {
         // user authenticated with Firebase
 
         // document.querySelector('.avatar img')
         //     .setAttribute("src", findProfilePic(authData));
         
-        // Saving data
-        ref.child('users').child(authData.uid).set(authData);
+        // Saving data if not stored already
+        ref.child('users').child(authData.uid).on("value", function(snapshot){
+            if(snapshot.val()){
+                console.log("user already exists");
+                console.log(snapshot.val());
+            }
+            else{
+                console.log("Adding user");
+                ref.child('users').child(authData.uid).set(authData); 
+            }
+        });
 
-        window.location = "packs";
         // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
         // console.log(authData);
-            
+        ref.child('users')
+            .child(authData.uid)
+            .child('postedAlready')
+            .on("value",
+                function(postedAlready){
+                    // Do stuff if user has already posted
+                    if (postedAlready.val()){
+                        console.log('there is a child postedAlready');
+                    }
+                    else {
+                        console.log("There is no child posted YET!");
+                        postfb();
+                    }
+                });
+
+        $('.invite')[0].innerHTML =  "Compartir es amar ;)";
+
+        $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
+        $('.navbar-login').attr('href', 'packs');
+        $('.facebook').unbind('click');
         $('.facebook').click(function(){
             postfb();
         });
     } else {
         // user is logged out
+        $('.navbar-login')[0].innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
+        $('.navbar-login').attr('href', '#login');
         $('.facebook').unbind('click');
         $('.facebook').click(function(){
             userLogin("facebok");   
