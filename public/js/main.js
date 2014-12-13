@@ -181,8 +181,7 @@ ref.onAuth(function(authData) {
     $('.invite')[0].innerHTML =  "¡Compártelo con tus amigos!";
     $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
     $('.navbar-login').attr('href', 'packs');
-    $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<button class=\"button ircore\">Ir al Entrenamiento</button>";
-    $('.ircore').attr('href', 'packs');
+    $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<a href=\"/packs\"><button class=\"button ircore\">Ir al Entrenamiento</button></a>";
         
 } else {
     // user is logged out
