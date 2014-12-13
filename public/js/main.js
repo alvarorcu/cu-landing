@@ -76,7 +76,7 @@ function postfb(authData)
                     'He ingresado al CoreUpgrade. Tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. '
                 ),
                 href: 'http://hackspace.la',
-                picture: 'http://hackspace.la/img/pict/webfb.png'
+                media: [{ type: 'image', src: 'http://hackspace.la/img/pict/webfb.png', href: 'http://hackspace.la'}]
             },
             action_links: [
                 { text: 'Sé parte de esta gran experiencia', href: 'http://www.hackspace.la' }
