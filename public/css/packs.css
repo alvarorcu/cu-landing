@@ -3,6 +3,14 @@ body {
     font-family: 'OpenSans';
 }
 
+a {
+  color: #fff;
+}
+
+a:hover, a:focus {
+  color: #fff;
+}
+
 p {
 font-family: 'OpenSans';
 color: #fff;
