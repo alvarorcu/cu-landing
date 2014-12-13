@@ -40,22 +40,6 @@
             <div><i class='fa fa-play-circle-o  fa-spin'></i><p>loading</p></div>
         </div>
 -->
-         <a id="go" rel="leanModal" href="#login">Basic</a>
-    
-    <div id="login">
-          <div>
-            <h3 class="invite">Inicia Sesión</h3>
-          </div>
-          <div>
-            <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
-            <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
-          </div>
-          <div>
-            <p>Inicia sesión con Facebook o Twitter para más información sobre cómo participar.</p>
-          </div>
-    </div>
-
-    <div id="lean_overlay"></div>
     
     <!-- Page Loader -->
     <div class='page-loader'>
@@ -79,13 +63,22 @@
     </div>
 
         <div class="row product">
-        <div class="large-5 columns">
-          <img src="http://placehold.it/400x500">
-        </div>
-        <div class="large-7 columns">
+        <div class="large-12 columns">
           <h2>Ticket de Acceso Total a la plataforma</h2>
-          <p>Accede de forma permanente a nuestra plataforma de entrenamiento, en donde podrás encontrar el mejor contenido para empezar a formarte como developer.</p>
-
+          <div class="large-3 columns">
+            <img src="../img/pict/ticket2.png">
+          </div>
+          <div class="large-9 columns">
+            <p class="producto">Accede de forma permanente a nuestra plataforma de entrenamiento, en donde podrás encontrar el mejor contenido para empezar a formarte como developer.</p>
+            <div class="rojo">
+              <a class="button" rel="modalMsj" href="#ticket">
+              Comprar Pack
+              </a>
+              <a class="button" href="../packs">
+              Regresar
+              </a>
+            </div>
+          </div>          
         </div>
       </div>     
 
@@ -93,7 +86,7 @@
         
           <div class="large-6 columns">
             <hr/>
-            <h3>¿Por qué comprar este pack?</h3>
+            <h3>¿Por qué comprar este ticket?</h3>
             <p>Porque a través de las constantes amanecidas de la
             HackSpace hemos comprendido que el mejor camino para
             volverte un developer disrruptivo es empezar con diversos
@@ -103,8 +96,8 @@
           </div>
           <div class="large-6 columns">
             <hr/>
-            <h3>¿Qué incluye este pack?</h3>
-            <p>Podrás disfrutar de todo el contenido que tenemos preparado para ti, además podrás utilizar nuestros recursos para desarrollar proyectos muy interesantes que combinan distintas áreas de desarrollo. Al terminar el entrenamiento serás capaz de crear cualquier cosa </p>
+            <h3>¿Qué incluye este ticket?</h3>
+            <p>Podrás disfrutar de todo el contenido que tenemos preparado para ti, además podrás utilizar nuestros recursos para desarrollar proyectos muy interesantes que combinan distintas áreas de desarrollo. Al terminar el entrenamiento serás capaz de crear cualquier cosa.</p>
             <hr/>
           </div>
         </div>
@@ -120,6 +113,52 @@
       </footer>
 
       <!-- END OF site main content content here -->
+
+      <a id="go" rel="leanModal" href="#login">Basic</a>
+    
+    <div id="login">
+          <div>
+            <h3 class="invite">Inicia Sesión</h3>
+          </div>
+          <div>
+            <button class="button facebook"><i class="ion ion-social-facebook"></i></button>
+            <button class="button twitter"><i class="ion ion-social-twitter"></i></button>
+          </div>
+          <div>
+            <p>Inicia sesión con Facebook o Twitter para más información sobre cómo participar.</p>
+          </div>
+    </div>
+
+    <div id="ticket" class="modalmsj" >
+          <a class="modal-close"><i class="ion-close-circled"></i></a>
+          <div>
+            <h2 class="invite">Tienes dos opciones de compra:</h2>
+          </div>
+      <div class="row">
+        <div class="large-6 small-12 columns">
+          <h3>Pago Online</h3>
+          <p>Puedes pagar de manera online mediante Paypal. El Ticket comprado por esta opción cuesta <strong>$35.00</strong> dólares americanos.
+          </p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="FEJNJU3DJ8NC8">
+            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+            <img alt="" border="0" src="https://www.paypalobjects.com/es_XC/i/scr/pixel.gif" width="1" height="1">
+          </form>
+          <p>Apenas realices el pago te enviaremos tu código de activación a tu correo electrónico.</p>
+        </div>
+
+        <div class="large-6 small-12 columns">
+          <h3>Pago en Oficina</h3>
+          <p>Puedes acercarte a nuestras oficinas para pagar por el Ticket. El Ticket comprado por esta opción cuesta <strong>S/.99.00</strong> Nuevos Soles.</p>
+          <p>Te entregaremos de manera física tu código de activación y también te lo enviaremos por correo electrónico.</p>
+          <p>Nuestras oficinas están ubicadas en:<br>
+            Calle Almirante Guisse 1198, Jesús María.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lean_overlay"></div>
 
 
       <!--        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>-->
@@ -140,6 +179,7 @@
       <script src='../js/jquery.downCount.js'></script>
       <script src='../js/jquery.maximage.js'></script>
       <script src='../js/jquery.leanModal.min.js'></script>
+      <script src='../js/modalmsj.js'></script>
 
       <script src='../js/packs.js'></script>
 
