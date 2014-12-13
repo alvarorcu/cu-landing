@@ -68,15 +68,11 @@ function postfb(authData)
     FB.ui(
         {
             method: 'feed',
-            message: 'HackSpace',
-            
             name: 'Aprende desarrollo web y electrónica en solo un mes',
+            link: 'http://hackspace.la',
             picture: 'http://hackspac/img/pict/webfb.png',
             caption: 'CoreUpgrade 2015 - HackSpace Perú',
-            description: (
-                'He ingresado al CoreUpgrade. Tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. '
-            ),
-            href: 'http://hackspace.la',
+            description: 'He ingresado al CoreUpgrade. Tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. ',
             action_links: [
                 { text: 'Sé parte de esta gran experiencia', href: 'http://www.hackspace.la' }
             ],
