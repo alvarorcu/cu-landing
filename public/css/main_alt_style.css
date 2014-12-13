@@ -547,3 +547,19 @@ button.facebook:hover {
 .page-when .content {
     margin: 3rem 0 5.5rem;
 }
+
+button.ircore {
+    font-family: 'OpenSans-Light';
+    width:15rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
+}
+
+button.ircore:hover, button.ircore:focus  {
+    background: #e42038;
+}
+
+.login p.logged {
+    margin: 2rem 0 0;
+}

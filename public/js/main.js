@@ -68,20 +68,20 @@ function postfb(authData)
     FB.ui(
         {
             method: 'stream.publish',
-            message: 'Hackspace',
+            message: 'HackSpace',
             attachment: {
-                name: 'Core Upgrade - Hackspace 2015',
-                caption: 'Core Upgrade - Hackspace 2015',
+                name: 'Aprende desarrollo web y electrónica en un mes',
+                caption: 'CoreUpgrade 2015 - HackSpace Perú',
                 description: (
-                    'He ingresado al Core Upgrade - Hackspace 2015, tú también se parte de esta gran experiencia ingresa ahora te esperamos. '
+                    'He ingresado al CoreUpgrade y tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. '
                 ),
-                href: 'alvarorcu.github.io/cu-landing',
-                picture: 'https://fbcdn-photos-d-a.akamaihd.net/hphotos-ak-xpa1/t39.2081-0/p128x128/10574696_1584699925093511_967030902_n.png'
+                href: 'http://hackspace.la',
+                picture: '../img/pict/webfb.png'
             },
             action_links: [
-                { text: 'Se parte de esta gran experiencia', href: 'alvarorcu.github.io/cu-landing' }
+                { text: 'Sé parte de esta gran experiencia', href: 'http://www.hackspace.la' }
             ],
-            user_prompt_message: 'Ingresa al Core Upgrade - Hackspace 2015'
+            user_prompt_message: 'Ingresa al CoreUpgrade 2015'
         },
         function(response) {
             if (response && response.post_id) {
@@ -89,7 +89,7 @@ function postfb(authData)
                 window.location = "packs";
             }
             else
-                alert('Compartir es bueno, no queieres compartir este genial entrenamiento con tus amiwis?');
+                alert('¿No quieres compartir este genial entrenamiento con tus amigos?');
 
         }
     );
@@ -178,10 +178,10 @@ ref.onAuth(function(authData) {
                      }
                  });
 
-    $('.invite')[0].innerHTML =  "Compartelo con tus amigos";
-
+    $('.invite')[0].innerHTML =  "¡Compártelo con tus amigos!";
     $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
     $('.navbar-login').attr('href', 'packs');
+    $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<button class=\"button ircore\">Ir al Entrenamiento</button>";
         
 } else {
     // user is logged out
