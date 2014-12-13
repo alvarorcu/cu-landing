@@ -32,25 +32,59 @@ ref.onAuth(function(authData) {
             }
         });
 
+        var current_user = users.child(authData.uid);
+
         document.querySelector('.avatar img')
             .setAttribute("src", findProfilePic(authData));
         
         $('.settings').click(function(){
             ref.unauth();
+            authData = null;
         });
         
-        users.child(authData.uid).child('activated').once("value", function(activated){
+        current_user.child('activated').once("value", function(activated){
             if(activated.val()){
                 console.log("user is already activated, no need to show the activation input");
                 $('.activation-code').remove();
                 $('#contador').show("slow");
             }
             else{
-                console.log("User is not Activated but we are just fooling around");
-                $(".activation-code button").click(function(){
-                    var activationCode = $(".activation-code input").val();
-                    sendActivationCode(activationCode, authData);
+                console.log("User not Activated, checking if he/she has been banned");
+                current_user.child('banned').once("value", function(banned){
+                    if(banned.val()){
+                        
+                        current_user.child('bannedAt').once("value",function(bannedAt){
+                            if(bannedAt.val()){
+                                console.log("bannedAt time: ", bannedAt.val());
+                                var currentTime = new Date();
+                                var elapsedTime = (currentTime.getTime() - bannedAt.val()) / 60000;
+                                
+                                
+                                if(elapsedTime > 10){
+                                    current_user.update({banned: false, strikes: 0});
+                                    location.reload(); 
+                                }
+                                else{
+                                    var remainingMinutes = (11 - elapsedTime).toString().split('.')[0];
+                                    if(remainingMinutes > 1){
+                                        $('.activation-code').html("<h2> Superaste los 3 intentos, vuelve en unos "+ remainingMinutes +" minutos! :) </h2>");
+                                    }
+                                    else{
+                                        $('.activation-code').html("<h2> Superaste los 3 intentos, vuelve en 1 minuto! :) </h2>");
+                                    }
+                                    console.log("You have not passed 10 minutes yet, you have passed: ", elapsedTime);
+                                }
+                            }
+                        });
+                    }
+                    else{
+                        $(".activation-code button").click(function(){
+                            var activationCode = $(".activation-code input").val();
+                            sendActivationCode(activationCode, authData);
+                        });
+                    }
                 });
+                
             }
         });
 
@@ -87,6 +121,7 @@ function sendActivationCode(activationCode, authData){
     var ref = new Firebase("https://core-upgrade.firebaseio.com");
     var guids = ref.child('guids');
     var users  = ref.child('users');
+    var current_user = users.child(authData.uid);
     
     guids.child('-' + activationCode)
         .once("value", function(activation_code){
@@ -95,8 +130,7 @@ function sendActivationCode(activationCode, authData){
                 if(!activation_code.val()['used']){
                     console.log("Codigo es valido y puede ser usado");
                     
-                    ref.child('users')
-                        .child(authData.uid)
+                    current_user
                         .child('activated')
                         .once("value", function(activated){
                             if(activated.val()) {
@@ -114,20 +148,46 @@ function sendActivationCode(activationCode, authData){
                                 guids.child('-' + activationCode).update({used: true});
                                 $('.activation-code').remove();
                                 $('#contador').show("slow");
-                                
                             }
                         });
                 }
                 else{
-                    console.log('Codigo ya fue usado');
+                    alert('Codigo ya fue usado');
+                    strikeUp(current_user);
                 }
             }
             else{
-                console.log("NO activation ode found");
-                alert("Codigo Incorreccto");
+                alert.log("Ese codigo no fue encontrado en nuestra base de datos");
+                strikeUp(current_user);
             }
         });
 
+}
+
+function strikeUp(current_user){
+    current_user.child('strikes').once("value",function(strikes){
+        if(strikes.val()) {
+            if(strikes.val() == 3){
+                var now = new Date();
+                current_user.update({banned: true, bannedAt: now.getTime()});
+                location.reload();
+            }
+            else{
+                current_user.update({strikes: strikes.val()+1}, function(error){
+                    if(error){
+                        console.log("Synchronization failed at strikes");
+                    }
+                    else {
+                        console.log("Tienes: " + strikes.val() + " strikes");
+                    }
+                });
+            }
+        }
+        else{
+            console.log("Got 1 strike!");
+            current_user.update({strikes: 1});
+        }
+    });
 }
 function findProfilePic(authData){
     var provider = authData.provider;
