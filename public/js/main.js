@@ -70,10 +70,10 @@ function postfb(authData)
             method: 'stream.publish',
             message: 'HackSpace',
             attachment: {
-                name: 'Aprende desarrollo web y electrónica en un mes',
+                name: 'Aprende desarrollo web y electrónica en solo un mes',
                 caption: 'CoreUpgrade 2015 - HackSpace Perú',
                 description: (
-                    'He ingresado al CoreUpgrade y tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. '
+                    'He ingresado al CoreUpgrade. Tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. '
                 ),
                 href: 'http://hackspace.la',
                 picture: '../img/pict/webfb.png'
@@ -182,6 +182,7 @@ ref.onAuth(function(authData) {
     $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
     $('.navbar-login').attr('href', 'packs');
     $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<button class=\"button ircore\">Ir al Entrenamiento</button>";
+    $('.ircore').attr('href', 'packs');
         
 } else {
     // user is logged out
