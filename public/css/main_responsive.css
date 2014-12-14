@@ -345,6 +345,9 @@ http://themeforest.net/licenses
 }
 
 @media (max-width : 600px){
+    #nis{
+        display: none;
+    }
     #hir {
         display: none;
     }
