@@ -345,7 +345,7 @@ http://themeforest.net/licenses
 }
 
 @media (max-width : 600px){
-    div#hir {
+    #hir {
         display: none;
     }
     .texto p {
