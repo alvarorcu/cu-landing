@@ -345,6 +345,9 @@ http://themeforest.net/licenses
 }
 
 @media (max-width : 600px){
+    div#hir {
+        display: none;
+    }
     .texto p {
         font-size: 0.7rem !important;
         margin-bottom: 0.3rem !important;
