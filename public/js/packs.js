@@ -125,8 +125,8 @@ function sendActivationCode(activationCode, authData){
     
     guids.child('-' + activationCode)
         .once("value", function(activation_code){
-            console.log(activation_code.val());
             if(activation_code.val()){
+                console.log(activation_code.val());
                 if(!activation_code.val()['used']){
                     console.log("Codigo es valido y puede ser usado");
                     
