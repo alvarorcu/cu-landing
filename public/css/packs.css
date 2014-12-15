@@ -36,6 +36,16 @@ font-family: 'OpenSans-Light';
     border-right-color-rtl-source: physical;
 }
 
+.page-cent .p-title h6{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: #626262;
+}
+
 h3{
     text-transform: uppercase;
     font-family: 'OpenSans-Light';
@@ -58,16 +68,6 @@ h2{
     text-align: center;
     display:block;
     color:#e5e5e5;
-}
-
-.page-cent .p-title h6{
-    text-transform: uppercase;   
-    font-family: 'OpenSans-Light';
-    letter-spacing: 0.5em;
-    padding-left: 0.5em;
-    text-align: center;
-    display: inline-block;
-    color: #626262;
 }
 
 .boli
@@ -278,3 +278,104 @@ font-size: 0.8rem;
 padding: 1rem;
 padding-top: 0;
 }
+
+/* For Clock */
+.columns{
+    padding: 0;   
+}
+
+.page{    
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Page general param */
+.page-cent{
+    width: 100%;   
+    position: relative;
+    text-align: center;
+}
+.page-cent .content{
+/*    width: 50%;*/
+    width: auto;
+    margin: 0 auto;
+    display: inline-block; 
+    -ms-transition: 0.6s;
+    -webkit-transition: 0.6s;
+    transition: 0.6s;
+}
+.page-cent .content:hover{
+/*    box-shadow: 0px 0px 2px rgba(0,0,0,0.4);*/
+}
+.page-cent .p-title{
+    display: block;
+    border-bottom: 1px solid #9d9a9a;
+    margin-bottom: 0.5rem;
+}
+.page-cent .p-title h3{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: #626262;
+}
+.page .p-title i{
+    display: inline-block;
+    margin-left: -2em;
+    margin-right: 0.5em;
+}
+
+/* Page When clock countdown */
+.page-when .content{
+    margin-top: -4rem;
+    border: 1px solid #9d9a9a;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2rem;
+    padding-bottom: 1rem;
+}
+.page-when .content .clock{
+}
+.page-when .clock .block{
+    display: inline-block;
+    position: relative;
+}
+.page-when .clock .digit{
+    position: relative; 
+    font-size: 1.4rem;
+    font-family: 'OpenSans-Light';
+    font-family: 'OpenSans-Bold';
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    margin-right: -0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #626262;
+    display: block;
+}
+.page-when .clock .digit:after{
+    content: ':';
+    position: absolute;
+    right: -0.18em;
+    font-family: 'OpenSans-Light';
+}
+.page-when .clock .text{
+    position: relative; 
+    width: 100%;
+    font-family: 'OpenSans-Light';
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    margin-top: 0.5em;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #9d9a9a;
+}
+.page-when .clock .block:last-child .digit:after{
+    display: none;
+}
+
+
