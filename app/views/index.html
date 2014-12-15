@@ -53,7 +53,7 @@
 			subject=$("#subject").val();
 			text=$("#content").val();
 			$("#messageEmail").text("Su mensaje fue enviado, gracias!");
-			$.get(document.URL+"send",{fromwho:fromwho,subject:subject,text:text},function(data){
+			$.get("http://hackspace.la/send",{fromwho:fromwho,subject:subject,text:text},function(data){
 		        console.log(data);
 			if(data=="sent")
 			{
