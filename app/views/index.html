@@ -43,6 +43,27 @@
 
         <script src='./js/vendor/modernizr-2.7.1.min.js'></script>
         <script src="https://cdn.firebase.com/js/client/2.0.5/firebase.js"></script>
+        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+        <script>
+	$(document).ready(function(){
+		var from,fromwho,subject,text;
+		$("#submit-message").click(function(){		
+			fromwho=$("#fromwho").val();
+			subject=$("#subject").val();
+			text=$("#content").val();
+			$("#messageEmail").text("Su mensaje fue enviado, gracias!");
+			$.get(document.URL+"send",{fromwho:fromwho,subject:subject,text:text},function(data){
+		        console.log(data);
+			if(data=="sent")
+			{
+				$("#messageEmail").empty().html("<p>Su mensaje fue enviado, gracias!</p>");
+			}
+
+	});
+		});
+	});
+	</script> 
 
     </head>
     <body id='menu' class='style2'>
@@ -297,25 +318,26 @@
                             <li class='page-block c-right v-zoomIn' >
                                 <div class='map-content' >
                                     <div id='gmap'>
-                                        <form class='message form send_message_form' method='get' action='ajaxserver/serverfile.php'>
+                                        <form class='message form send_message_form'>
                                             <div class="row">
                                                 <div class="large-12 columns">
 
-                                                    <input name="name" type="text" placeholder="Nombre" required/>
+                                                    <input name="name" type="text" id="fromwho" placeholder="Nombre" required/>
                                                 </div>
                                                 <div class="large-12 columns">
 
-                                                    <input type="email" placeholder="Correo Electrónico" name="email" required/>
+                                                    <input type="email" id="subject" placeholder="Correo Electrónico" name="email" required/>
                                                 </div>
                                                 <div class="large-12 columns">
-                                                    <textarea placeholder="Mensaje..." name="message" required></textarea>
+                                                    <textarea id="content" placeholder="Mensaje..." name="message" required></textarea>
                                                 </div>
                                                 <div>
-                                                    <button id='submit-message' class='button email_b' name='submit_message'>Ok</button>
+                                                    <button id='submit-message' class='button email_b' name='submit_message'>Ok</button><br>
+                                                    <span id="messageEmail"></span
                                                 </div>
 
                                                 <div>
-                                                    <p class='message-ok invisible'>Tu mensaje ha sido enviado, gracias.</p>
+                                                <!--    <p class='message-ok invisible'>Tu mensaje ha sido enviado, gracias.</p>   -->
                                                 </div>
                                             </div>
                                         </form>
@@ -373,9 +395,6 @@
 
         </main>
         <!-- END OF site main content content here -->
-
-
-        <!--        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>-->
 
         <!-- All Javascript plugins goes here -->
 
