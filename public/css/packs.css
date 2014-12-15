@@ -60,6 +60,16 @@ h2{
     color:#e5e5e5;
 }
 
+.page-cent .p-title h6{
+    text-transform: uppercase;   
+    font-family: 'OpenSans-Light';
+    letter-spacing: 0.5em;
+    padding-left: 0.5em;
+    text-align: center;
+    display: inline-block;
+    color: #626262;
+}
+
 .boli
 {
     text-align:center;
