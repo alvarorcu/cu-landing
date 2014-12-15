@@ -27,7 +27,6 @@
     
     <!-- Initializer -->
     <link rel='stylesheet' href='../css/normalize.css'>        
-    
     <!-- Web fonts and Web Icons -->
     <link rel='stylesheet' href='../css/pageloader.css'>
     <link rel='stylesheet' href='../fonts/opensans/stylesheet.css'>
@@ -42,6 +41,8 @@
     
     <script src='../js/vendor/modernizr-2.7.1.min.js'></script>
     <script src="https://cdn.firebase.com/js/client/2.0.5/firebase.js"></script>
+    
+    <script src='../js/okvideo.min.js'></script>
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -53,9 +54,9 @@
     </div>
     -->
   
-    <div class='site-config'
+   <div class='site-config'
          
-         data-date='05/02/2015 10:00:00' 
+         data-date='01/02/2015 10:00:00' 
          data-date-timezone='+5'
          
          
@@ -155,11 +156,12 @@
         <div class="row">
           <hr>
           <div class="large-12 columns">
-            <div class="herecontent"></div>
             <div class="row activation-code">
               <h2>¿Ya tienes tu código de activación?</h2>
                 <input type="text" placeholder="Ingresa tu código aquí..."/> 
                 <button class="button">Activar</button>
+            </div>
+            <div class='section page page-cent page-when' id='herecontent'>
             </div>
           </div>
           <hr>
