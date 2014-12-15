@@ -65,6 +65,7 @@ ref.onAuth(function(authData) {
                 var div = document.createElement('div');
                 div.innerHTML = '<br><br><br><br><section class="content"><header class="p-title"><h6>Bienvenido al Core Upgrade. Vivamos la cuenta regresiva!.</h6></header><div class="clock clock-countdown"><div class="block"><div class="digit days">00</div><div class="text">días</div></div><div class="block"><div class="digit hours">00</div><div class="text">hors</div></div><div class="block"><div class="digit minutes">00</div><div class="text">mins</div></div><div class="block"><div class="digit seconds">00</div><div class="text">segs</div></div></div></section><br><br><br>';
                 document.getElementById('herecontent').appendChild(div);
+                location.reload();
             }
             else{
                 console.log("User not Activated, checking if he/she has been banned");
