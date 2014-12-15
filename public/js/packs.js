@@ -3,7 +3,6 @@ $(window).load(function(){
     $('.page-loader').addClass('hidden');
 
     $('.avatar-img img').click(function () {
-        console.log( "img", this );
         $('.settings').slideToggle();
     });
 });
@@ -23,8 +22,6 @@ ref.onAuth(function(authData) {
 
         ref.child('users').child(authData.uid).once("value", function(snapshot){
             if(snapshot.val()){
-                console.log("user already exists");
-                console.log(snapshot.val());
             }
             else{
                 console.log("Adding user");

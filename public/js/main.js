@@ -24,7 +24,7 @@
 // Window resized
 
 $(window).on('resize',function(){
-     var slideHeight = $('.slick-track').innerHeight();
+    var slideHeight = $('.slick-track').innerHeight();
 });
 
 /*************************************/
@@ -32,10 +32,10 @@ $(window).on('resize',function(){
 /*************************************/
 // Include the Twitter Library
 window.twttr = (function (d,s,id) {
-  var t, js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-  js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-  return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+    js.src="https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
 }(document, "script", "twitter-wjs"));
 
 var stateTw = false;
@@ -60,8 +60,8 @@ window.fbAsyncInit = function() {
         version    : 'v2.2'
     });
 };
- 
- 
+
+
 function postfb(authData)
 {
     var success = false;
@@ -88,13 +88,13 @@ function postfb(authData)
     return success;
 }
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+(function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
 /*************************************/
 /** Here comes the Fire to the Base **/
@@ -103,13 +103,11 @@ function postfb(authData)
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
 
 ref.onAuth(function(authData) {
-    console.log( authData );
     if (authData) {
         // Saving data if not stored already
         ref.child('users').child(authData.uid).once("value", function(snapshot){
             if(snapshot.val()){
                 console.log("user already exists");
-                console.log(snapshot.val());
             }
             else{
                 console.log("Adding user");
