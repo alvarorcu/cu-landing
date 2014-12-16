@@ -24,9 +24,9 @@ app.get('/send',function(req,res){
         mail.message({
 	    from: 'dev@hackspace.pe',
 	    to: ['dev@hackspace.pe'],
-	    subject: req.query.subject
+	    subject: 'Core Upgrade 2015'
 	  })
-	  .body('\r\n De: ' + req.query.fromwho + '\r\n Mensaje: '+ req.query.text)
+	  .body('\r\n De: ' + req.query.fromwho + '\r\n Correo: ' + req.query.subject + '\r\n Mensaje: '+ req.query.text)
 	  .send(function(err) {
 	    if (err) throw err;
             res.end("sent");
