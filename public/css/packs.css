@@ -287,6 +287,14 @@ padding-top: 0;
     height: 100%;
 }
 
+#contador {
+  display:none;
+}
+
+.activation-code {
+  display:none;
+}
+
 /* Page general param */
 .page-cent{
     width: 100%;   
@@ -343,7 +351,7 @@ padding-top: 0;
 }
 .page-when .clock .digit{
     position: relative; 
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-family: 'OpenSans-Light';
     font-family: 'OpenSans-Bold';
     font-weight: 100;
@@ -351,7 +359,7 @@ padding-top: 0;
     margin-right: -0.2em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    color: #626262;
+    color: #fff;
     display: block;
 }
 .page-when .clock .digit:after{
