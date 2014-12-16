@@ -42,13 +42,11 @@ ref.onAuth(function(authData) {
         current_user.child('activated').once("value", function(activated){
             if(activated.val()){
                 console.log("user is already activated, no need to show the activation input");
-                $('.activation-code').remove();
                 $('#contador').show("slow");
-                var div = document.createElement('div');
-                div.innerHTML = '<br><br><br><br><section class="content"><header class="p-title"><h6>Bienvenido al Core Upgrade. Vivamos la cuenta regresiva!.</h6></header><div class="clock clock-countdown"><div class="block"><div class="digit days">00</div><div class="text">días</div></div><div class="block"><div class="digit hours">00</div><div class="text">hors</div></div><div class="block"><div class="digit minutes">00</div><div class="text">mins</div></div><div class="block"><div class="digit seconds">00</div><div class="text">segs</div></div></div></section><br><br><br>';
-                document.getElementById('herecontent').appendChild(div);
+                $("html, body").animate({ scrollTop: 0 }, "slow");
             }
             else{
+                $('.activation-code').show("slow");
                 console.log("User not Activated, checking if he/she has been banned");
                 current_user.child('banned').once("value", function(banned){
                     if(banned.val()){
@@ -128,7 +126,7 @@ function sendActivationCode(activationCode, authData){
             if(activation_code.val()){
                 console.log(activation_code.val());
                 if(!activation_code.val()['used']){
-                    console.log("Codigo es valido y puede ser usado");
+                    console.log("Código es valido y puede ser usado");
                     
                     current_user
                         .child('activated')
@@ -136,7 +134,7 @@ function sendActivationCode(activationCode, authData){
                             if(activated.val()) {
                                 console.log(activated.val());
                                 console.log('user already activated');
-                                alert("Usuario ya esta activado, no gaster tu codigo");
+                                alert("Usuario ya esta activado, no gastes tu codigo");
                             }
                             else {
                                 console.log("Activating User");
@@ -147,17 +145,18 @@ function sendActivationCode(activationCode, authData){
                                     });
                                 guids.child('-' + activationCode).update({used: true});
                                 $('.activation-code').remove();
+                                $("html, body").animate({ scrollTop: 0 }, "slow");
                                 $('#contador').show("slow");
                             }
                         });
                 }
                 else{
-                    alert('Codigo ya fue usado');
+                    alert('El código ya fue usado');
                     strikeUp(current_user);
                 }
             }
             else{
-                alert.log("Ese codigo no fue encontrado en nuestra base de datos");
+                alert.log("Ese código no fue encontrado en nuestra base de datos.");
                 strikeUp(current_user);
             }
         });
@@ -253,5 +252,29 @@ preloadImages(["../img/pict/ticket2.png", "../img/pict/maker2.png", "../img/pict
 $(function() {
     $("a[rel*=modalMsj]").modalMsj();       
 });
+
+/** Clock **/
+
+var dateReadableText = 'Upcoming date';
+if($('.site-config').attr('data-date-readable') && ($('.site-config').attr('data-date-readable') != '')){
+    $('.timeout-day').text('');
+    dateReadableText = $('.site-config').attr('data-date-readable');        
+    $('.timeout-day').text(dateReadableText);
+}
+$('.clock-countdown').downCount({
+    date: $('.site-config').attr('data-date'),
+    offset: +10
+}, function () {
+    //callback here if finished
+    //alert('YES, done!');
+    var zerodayText = 'An upcoming date';
+    if($('.site-config').attr('data-zeroday-text') && ($('.site-config').attr('data-zeroday-text') != '')){
+        $('.timeout-day').text('');
+        zerodayText = $('.site-config').attr('data-zeroday-text'); 
+    }
+           
+    $('.timeout-day').text(zerodayText);
+   
+}); 
 
 
