@@ -9,6 +9,24 @@ $(window).load(function(){
 
 /* END OF Page Loader : hide loader when all are loaded */
 
+/*************************************/
+/**              Clock              **/
+/*************************************/
+$('.clock-countdown').downCount({
+    date: $('.site-config').attr('data-date'),
+    offset: +10
+}, function () {
+    //callback here if finished
+    //alert('YES, done!');
+    var zerodayText = 'An upcoming date';
+    if($('.site-config').attr('data-zeroday-text') && ($('.site-config').attr('data-zeroday-text') != '')){
+        $('.timeout-day').text('');
+        zerodayText = $('.site-config').attr('data-zeroday-text'); 
+    }
+           
+    $('.timeout-day').text(zerodayText);
+   
+}); 
 
 /*************************************/
 /** Here comes the Fire to the Base **/
@@ -43,7 +61,6 @@ ref.onAuth(function(authData) {
             if(activated.val()){
                 console.log("user is already activated, no need to show the activation input");
                 $('#contador').show("slow");
-                $("html, body").animate({ scrollTop: 0 }, "slow");
             }
             else{
                 $('.activation-code').show("slow");
