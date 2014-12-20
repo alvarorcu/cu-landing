@@ -152,6 +152,12 @@ h2{
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.95);
   max-width: 90%;
+  max-height: 80%;
+  overflow: auto !important;
+}
+
+.modalmsj .row {
+  margin-bottom: 1em;
 }
 
 #login button {
@@ -383,4 +389,54 @@ padding-top: 0;
     display: none;
 }
 
+.viene {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-padding-start: 40px;
+  margin: 0 0 1em;
+  padding: 0.3em 0 0.7em 0.5em;
 
+}
+.viene li {
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.viene li.title {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/*scrollbar*/
+
+div.newscroll::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+}
+
+div.newscroll::-webkit-scrollbar-button:start:decrement,
+div.newscroll::-webkit-scrollbar-button:end:increment {
+    height: 0px;
+    display: block;
+    background-color: transparent;
+}
+
+div.newscroll::-webkit-scrollbar-track-piece {
+    background-color: #D5D5D5;
+    -webkit-border-radius: 6px;
+}
+
+div.newscroll::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #666;
+    -webkit-border-radius: 6px;
+}
+
+div.newscroll::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #666;
+    -webkit-border-radius: 3px;
+}
