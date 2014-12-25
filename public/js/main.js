@@ -47,47 +47,6 @@ twttr.ready(function (twttr) {
     });
 });
 
-
-/*************************************/
-/******* Add fb sdk functions ********/
-/*************************************/
-window.fbAsyncInit = function() {
-    FB.init({
-        appId      : '1584684295095074',
-        status     : true, 
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v2.2'
-    });
-};
-
-
-function postfb(authData)
-{
-    var success = false;
-    FB.ui(
-        {
-            method: 'feed',
-            name: 'Aprende desarrollo web y electrónica en solo un mes',
-            link: 'http://hackspace.la',
-            picture: 'http://hackspace.la/img/pict/webfb.png',
-            caption: 'CoreUpgrade 2015 - HackSpace Perú',
-            description: 'He ingresado al CoreUpgrade. Tú también pueder ser parte de este entrenamiento desde cero para que empieces a desarrollar con tecnologías web y electrónica. ' ,
-            message: 'Ingresa al CoreUpgrade 2015'
-        },
-        function(response) {
-            if (response && response.post_id) {
-                ref.child('users').child(authData.uid).update({postedAlready: true});
-                window.location = "packs";
-            }
-            else
-                alert('¿No quieres compartir este genial entrenamiento con tus amigos?');
-
-        }
-    );
-    return success;
-}
-
 (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) {return;}
@@ -101,7 +60,7 @@ function postfb(authData)
 /*************************************/
 
 var ref = new Firebase("https://core-upgrade.firebaseio.com");
-
+var redirect = false;
 ref.onAuth(function(authData) {
     if (authData) {
         // Saving data if not stored already
@@ -112,83 +71,31 @@ ref.onAuth(function(authData) {
             else{
                 console.log("Adding user");
                 ref.child('users').child(authData.uid).set(authData); 
+                window.location = "packs";
             }
         });
 
-        // console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
-        // console.log(authData);
-        ref.child('users')
-            .child(authData.uid)
-            .child('postedAlready')
-            .once("value",
-                 function(postedAlready){
-                     // Do stuff if user has already posted
-                     if (postedAlready.val()){
-                         
-                         window.location = "#login";
-                         
-                         console.log('there is a child postedAlready');
-                         if(authData.provider == "facebook"){
-                             $('.facebook').unbind('click');
-                             $('.facebook').click(function(){
-                                 postfb(authData);
-                             });
-                             $('.twitter').remove();
-                         }
-                         if (authData.provider == "twitter"){
-                             $('.twitter').unbind('click');
-                             $('.twitter').click(function(){
-                                 window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://hackspace.la","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
-                                 window.location = "packs";
-                             });
-                             $('.facebook').remove();
-                         }
-                     }
-                     else {
-                         console.log("There is no child posted YET!");
-                         if (authData.provider == "facebook"){
-                             postfb(authData);
-                             $('.facebook').unbind('click');
-                             $('.facebook').click(function(){
-                                 postfb(authData);
-                             });
-                             
-                             $('.twitter').remove();
-                         }
-                         if (authData.provider == "twitter"){
-                             $('.twitter').unbind('click');
-                             $('.twitter').click(function(){
-                                 window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://hackspace.la","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
-                                 window.location = "packs";
-                             });
-                             $('.facebook').remove();
-                             window.open("https://twitter.com/intent/tweet?&screen_name=hackspaceperu&text=Estoy%20viviendo%20la%20gran%20experiencia%20Core%20Upgrade%20-%20Hackspace%202015&url=http://core-upgrade.dev:3000","","toolbar=no, scrollbars=yes, titlebar=no, menubar=no, resizable=yes, width=800, height=400");
-                             window.location = "packs";
-                         }
-                     }
-                 });
-
-    $('.invite')[0].innerHTML =  "¡Compártelo con tus amigos!";
-    $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
-    $('.navbar-login').attr('href', 'packs');
-    $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<a href=\"/packs\"><button class=\"button ircore\">Ir al Entrenamiento</button></a>";
         
-} else {
-    // user is logged out
-    $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
-    $('.navbar-login').attr('href', '#login');
+        $('.invite')[0].innerHTML =  "¡Compártelo con tus amigos!";
+        $('.navbar-login')[0].innerHTML = findFullName(authData) + "<i class=\"ion-person\"></i>";
+        $('.navbar-login').attr('href', 'packs');
+        $('.aviso')[0].innerHTML =  "<p class=\"logged\">Ingresa a nuestro entrenamiento aquí.</p>"+"<a href=\"/packs\"><button class=\"button ircore\">Ir al Entrenamiento</button></a>";
+    } else {
+        // user is logged out
+        $('.navbar-login').innerHTML = "INGRESAR <i class=\"ion-log-in\"></i>";
+        $('.navbar-login').attr('href', '#login');
 
-    $('.facebook').unbind('click');
-    $('.facebook').click(function(){
-        userLogin("facebook");
-    });
+        $('.facebook').unbind('click');
+        $('.facebook').click(function(){
+            userLogin("facebook");
+        });
         
-    $('.twitter').unbind('click');
-    $('.twitter').click(function(){
-        userLogin("twitter");
-    });
-}
-          });
+        $('.twitter').unbind('click');
+        $('.twitter').click(function(){
+            userLogin("twitter");
+        });
+    }
+});
     
 function userLogin(Provider){
     ref.authWithOAuthRedirect(Provider, function(err, authData){
